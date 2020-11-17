@@ -5,9 +5,16 @@ import { Link } from 'react-router-dom';
 const Greeting = (props) => {
   // debugger;
   const sessionLinks = () => (
-    <nav className="login-signup">
-      <Link to="/login">Login</Link>
-      <Link to="/signup">Sign up!</Link>
+    <nav className="nav-items">
+      <div>
+        <Link to="/signup">Make Flashcards</Link>
+      </div>
+      <div className="login-login">
+        <Link to="/login">Log In</Link>
+      </div>
+      <div className="login-get-started">
+        <Link to="/signup">Get Started</Link>
+      </div>
     </nav>
   );
   const personalGreeting = () => {
