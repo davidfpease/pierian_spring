@@ -43,9 +43,9 @@ class SessionForm extends React.Component {
         <form onSubmit={this.handleSubmit} className="login-form-box">
           Welcome to Pierian Spring!
           <br />
-          Please {this.props.formType} or {this.props.navLink}
-          {//this.renderErrors()
-          }
+          Please {this.props.formType}
+          <div onClick={this.props.closeModal} className="close-x">X</div> 
+          {this.renderErrors()}
           <div className="login-form">
             <br />
             {this.props.formType === 'signup' ? (

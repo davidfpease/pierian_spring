@@ -7,16 +7,17 @@ const Greeting = (props) => {
   const sessionLinks = () => (
     <nav className="nav-items">
       <div>
-        <Link to="/signup">Make Flashcards</Link>
+        <button onClick={() => props.openModal('signup')}>Make Flashcards</button>
       </div>
       <div className="login-login">
-        <Link to="/login">Log In</Link>
+        <button onClick={() => props.openModal('login')}>Log In</button>
       </div>
       <div className="login-get-started">
-        <Link to="/signup">Get Started</Link>
+        <button onClick={() => props.openModal('signup')}>Get Started</button>
       </div>
     </nav>
   );
+
   const personalGreeting = () => {
   // debugger
   return (
@@ -27,7 +28,10 @@ const Greeting = (props) => {
   );
 };
 
-  return props.currentUser ? personalGreeting() : sessionLinks();
+  return (
+    props.currentUser ? personalGreeting(props.currentUser, props.logout) : 
+    sessionLinks()
+  );
 };
 
 
