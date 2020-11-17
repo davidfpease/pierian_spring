@@ -7,7 +7,7 @@ import Greeting from './greeting';
 
 const mstp = (state) => {
 
-  // debugger;
+  debugger;
   return {
     currentUser: state.entities.users[state.session.id]
   };
