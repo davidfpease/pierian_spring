@@ -128,7 +128,7 @@ var RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 var LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
 var RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 var receiveCurrentUser = function receiveCurrentUser(currentUser) {
-  debugger;
+  // debugger;
   return {
     type: RECEIVE_CURRENT_USER,
     currentUser: currentUser
@@ -276,7 +276,7 @@ var Greeting = function Greeting(props) {
   };
 
   var personalGreeting = function personalGreeting() {
-    debugger;
+    // debugger
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("hgroup", {
       className: "header-group"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", {
@@ -317,7 +317,7 @@ __webpack_require__.r(__webpack_exports__);
  //{ session, entities: { users } }
 
 var mstp = function mstp(state) {
-  debugger;
+  // debugger;
   return {
     currentUser: state.entities.users[state.session.id]
   };
@@ -926,7 +926,7 @@ var Auth = function Auth(_ref) {
       path = _ref.path,
       loggedIn = _ref.loggedIn,
       exact = _ref.exact;
-  debugger;
+  // debugger;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Route, {
     path: path,
     exact: exact,
