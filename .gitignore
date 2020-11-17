@@ -10,7 +10,6 @@
 /bundle.js.map
 bundle.js
 bundle.js.map
-
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
