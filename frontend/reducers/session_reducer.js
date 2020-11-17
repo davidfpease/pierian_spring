@@ -3,7 +3,9 @@ import {
   LOGOUT_CURRENT_USER,
 } from '../actions/session_actions';
 
-const sessionReducer = (state = {}, action) => {
+const nullUser = Object.freeze({ id: null });
+
+const sessionReducer = (state = nullUser, action) => {
   Object.freeze(state);
   let newState = {};
   switch (action.type) {
@@ -15,7 +17,7 @@ const sessionReducer = (state = {}, action) => {
       return newState;
     default:
       return state;
-  }
+  } 
 };
 
 export default sessionReducer;
