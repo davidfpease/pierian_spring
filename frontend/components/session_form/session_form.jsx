@@ -45,13 +45,17 @@ class SessionForm extends React.Component {
       buttonLabel = "Log In";
     }
 
+
+
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <div className="modal-title">
             <span>{buttonLabel}</span>            
           </div>
-          <div onClick={this.props.closeModal} className="close-x">x</div> 
+          <div onClick={this.props.closeModal} className="close-x">
+            X
+          </div> 
           {this.renderErrors()}
           <div className="login-form">
             <br />
