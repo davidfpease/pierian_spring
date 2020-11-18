@@ -38,13 +38,20 @@ class SessionForm extends React.Component {
 
   render() {
 
+    let buttonLabel;
+    if (this.props.formType === "signup"){
+      buttonLabel = "Get Started";
+    } else {
+      buttonLabel = "Log In";
+    }
+
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          Welcome to Pierian Spring!
-          <br />
-          Please {this.props.formType}
-          <div onClick={this.props.closeModal} className="close-x">X</div> 
+          <div className="modal-title">
+            <span>{buttonLabel}</span>            
+          </div>
+          <div onClick={this.props.closeModal} className="close-x">x</div> 
           {this.renderErrors()}
           <div className="login-form">
             <br />
@@ -68,15 +75,15 @@ class SessionForm extends React.Component {
             ) : (
               <div></div>
             )}
-            <label>Email:
-              <input type="text"
+            <label className="input-descriptor">Email</label>
+              <input type="email"
                 value={this.state.email}
                 onChange={this.update('email')}
                 className="login-input"
               />
-            </label>
+            
             <br />
-            <label>Password:
+            <label className="input-descriptor">Password
               <input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
@@ -84,7 +91,7 @@ class SessionForm extends React.Component {
               />
             </label>
             <br />
-            <input className="session-submit" type="submit" value={this.props.formType} />
+            <input className="session-submit pill-button" type="submit" value={buttonLabel} />
           </div>
         </form>
       </div>

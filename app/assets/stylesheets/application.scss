@@ -14,34 +14,18 @@
  *= require_self
  */
 
+ // CSS Reset
+@import "base/reset.scss";
 
- .login-form-box {
-   outline: 1px solid black;
-   padding: 20px;
-   background: white;
-   position: relative;
- }
+// Core
+// @import "base/colors.scss";
+@import "base/fonts.scss";
+@import "base/layout.scss";
 
-  .modal-background {
-   position: fixed;
-   top: 0;
-   bottom: 0;
-   right: 0;
-   left: 0;
-   background: rgba(0, 0, 0, 0.7);
-   z-index: 10;
- }
+// API
+@import "api/*";
 
- .modal-child {
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
- }
+// Components
+@import "components/*";
 
-  .close-x {
-   position: absolute;
-   top: 5px;
-   right: 5px;
-   cursor: pointer;
- }
+ 
