@@ -54,21 +54,22 @@ class SessionForm extends React.Component {
             <span>{buttonLabel}</span>            
           </div>
           <div onClick={this.props.closeModal} className="close-x">
-            X
+            <img src={window.close_x} />
+
           </div> 
           {this.renderErrors()}
           <div className="login-form">
             <br />
             {this.props.formType === 'signup' ? (
               <div>
-                <label>First Name:
+                <label className="input-descriptor">First Name
                   <input type="text"
                     value={this.state.first_name}
                     onChange={this.update('first_name')}
                     className="login-input"
                   />
                 </label>
-                <label>Last Name:
+                <label className="input-descriptor">Last Name
                   <input type="text"
                     value={this.state.last_name}
                     onChange={this.update('last_name')}
@@ -79,12 +80,13 @@ class SessionForm extends React.Component {
             ) : (
               <div></div>
             )}
-            <label className="input-descriptor">Email</label>
+            <label className="input-descriptor">Email
               <input type="email"
                 value={this.state.email}
                 onChange={this.update('email')}
                 className="login-input"
               />
+            </label>
             
             <br />
             <label className="input-descriptor">Password
@@ -95,7 +97,9 @@ class SessionForm extends React.Component {
               />
             </label>
             <br />
-            <input className="session-submit pill-button" type="submit" value={buttonLabel} />
+            <div className="pill-button-container">
+              <input className="session-submit pill-button" type="submit" value={buttonLabel} />
+            </div>
           </div>
         </form>
       </div>

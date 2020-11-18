@@ -16,12 +16,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 const App = () => (
   <div>
     <Modal />
-    <header>
-      <Link to='/'>
-        <h1>Pierian Spring</h1>
-      </Link>
-      <GreetingContainer />
-    </header>
+        <GreetingContainer />
     <Switch>
       {/*
       <AuthRoute path="/login" component={LoginFormContainer} />

@@ -1,3 +1,5 @@
+@import "../base/fonts";
+
 /****** Modal **********/
  .modal-title {
    font-family: Proxima Nova,sans-serif;
@@ -26,10 +28,21 @@
    text-align: left;
    border-radius: 33px;
    border: none;
+   padding: 7px 9px;
+   font-family: $sans-serif;
+   cursor: pointer;
  }
+
+
 
  .pill-button:hover {
  background-color:#ffaa7a
+}
+
+.pill-button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 
@@ -65,6 +78,8 @@
    right: 5px;
    cursor: pointer;
    content: "\F404";
+   height: 36px;
+   width: 36px;
  }
 
  .input-descriptor {
