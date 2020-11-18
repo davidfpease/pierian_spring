@@ -5,39 +5,42 @@ import { Link } from 'react-router-dom';
 const Greeting = (props) => {
   // debugger;
   const sessionLinks = () => (
-    <div className="nav-bar">
-      <div className="nav-bar-logo">
-        <Link to='/'>
-          <img id="logo" src={window.logo} />
-        </Link>
-      </div>
-      <div className="nav-items">
-        <ul className="nav-items-list">
-          <li className="nav-bar-item nav-option">
-              <button className="nav-bar-button" >Find Flashcards</button>
-          </li>
-          <li className="nav-bar-item nav-option">
-              <button className="nav-bar-button" onClick={() => props.openModal('signup')}>Make Flashcards</button>
-          </li>
-          <li className="nav-bar-item nav-option">
-              <button className="nav-bar-button" >Why It Works</button>
-          </li>
-          <li className="nav-bar-item nav-option">
-              <button className="nav-bar-button" >More</button>
-          </li>
-        </ul>
-        <ul className="nav-ctas">
-          <li className="nav-bar-item">
-            <div className="nav-cta">
-              <button className="nav-bar-button" onClick={() => props.openModal('login')}>Log In</button>
-            </div>
-          </li>
-          <li className="nav-bar-item">
-            <div className="nav-cta nav-cta-login">
-              <button className="get-started-button" onClick={() => props.openModal('signup')}>Get Started</button>
-            </div>
-          </li>
-        </ul>
+    <div className="background-image">
+      <img id="logo" src={window.image_5} />
+      <div className="nav-bar">
+        <div className="nav-bar-logo">
+          <Link to='/'>
+            <img id="logo" src={window.logo} />
+          </Link>
+        </div>
+        <div className="nav-items">
+          <ul className="nav-items-list">
+            <li className="nav-bar-item nav-option">
+                <button className="nav-bar-button" >Find Flashcards</button>
+            </li>
+            <li className="nav-bar-item nav-option">
+                <button className="nav-bar-button" onClick={() => props.openModal('signup')}>Make Flashcards</button>
+            </li>
+            <li className="nav-bar-item nav-option">
+                <button className="nav-bar-button" >Why It Works</button>
+            </li>
+            <li className="nav-bar-item nav-option">
+                <button className="nav-bar-button" >More..</button>
+            </li>
+          </ul>
+          <ul className="nav-ctas">
+            <li className="nav-bar-item">
+              <div className="nav-cta">
+                <button className="nav-bar-button" onClick={() => props.openModal('login')}>Log In</button>
+              </div>
+            </li>
+            <li className="nav-bar-item">
+              <div className="nav-cta nav-cta-login">
+                <button className="get-started-button" onClick={() => props.openModal('signup')}>Get Started</button>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );
