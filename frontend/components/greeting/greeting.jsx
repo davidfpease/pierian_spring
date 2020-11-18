@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import Banner from './banner';
+
 //{ currentUser, logout }
 const Greeting = (props) => {
   // debugger;
@@ -42,6 +44,7 @@ const Greeting = (props) => {
           </ul>
         </div>
       </div>
+      <Banner openModal={props.openModal}/>
     </div>
   );
 
