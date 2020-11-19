@@ -65,7 +65,6 @@ class SessionForm extends React.Component {
             <img src={window.close_x} />
 
           </div> 
-          {this.renderErrors()}
           <div className="login-form">
             <br />
             {this.props.formType === 'signup' ? (
@@ -108,6 +107,9 @@ class SessionForm extends React.Component {
             <div className="pill-button-container">
               <input className="session-submit pill-button" type="submit" value={buttonLabel} />
             </div>
+          </div>
+          <div className="error-messages">
+            {this.renderErrors()}
           </div>
           <div className="demo-button-container">
             <button className="demo-button" onClick={this.demoUser}>Demo User</button>
