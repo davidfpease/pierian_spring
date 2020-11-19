@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import * as APIUtil from './util/session_api_util';
+import * as CardUtil from './util/cards_api_util';
 import * as thunkActions from './actions/session_actions';
 import configureStore from './store/store';
 import Root from './components/root';
@@ -29,6 +30,11 @@ document.addEventListener("DOMContentLoaded", () => {
   window.login = thunkActions.login;
   window.signup = APIUtil.signup;
   window.logout = APIUtil.logout;
+  window.fetchAllCards = CardUtil.fetchAllCards;
+  window.updateCard = CardUtil.updateCard;
+  window.deleteCard = CardUtil.deleteCard;
+  window.createCard = CardUtil.createCard;
+
   window.getState = store.getState;
   window.dispatch = store.dispatch;
 
