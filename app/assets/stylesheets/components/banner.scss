@@ -1,0 +1,72 @@
+@import "../base/fonts";
+
+@media screen and (min-width: 600px) {
+  div.banner h3 {
+    font-size: 80px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  div.banner h3 {
+    font-size: 30px;
+  }
+
+}
+
+
+.banner {
+////bottom: -400px;
+position: absolute;
+bottom: 6%;
+//width:
+z-index: 2;
+margin-right: 4%;
+margin-left: 4%;
+color: white;
+}
+
+.banner-headline{
+  font-size: calc(103px + 50*(100vw - 768px)/1792);
+  margin: 0 auto;
+}
+
+.banner-sub-headline {
+  max-width: 75%;
+  font-size: calc(19px + 14*(100vw - 320px)/2240);
+  font-weight: 400;
+}
+
+.main-ctas {
+  display: flex;
+  box-sizing: border-box;
+  font-family: $sans-serif;
+  text-transform: capitalize;
+  align-items: center;
+
+}
+
+
+.cta-button, .video-button{
+  text-transform: capitalize;
+  display: inline-flex;
+  justify-content: center;
+  font-weight: 600;
+  height: 80px;
+  width: 100%;
+  max-width: 250px;
+  min-width: 100px;
+  cursor: pointer;
+  background-color: #3faee0;
+  color: white;
+  margin: 30px 30px 40px 0;
+  align-items: center; 
+}
+
+.cta-button.neutral {
+  color: black;
+  background-color: white;
+}
+
+.main-ctas:first-child {
+  margin-right: 40px;
+}
