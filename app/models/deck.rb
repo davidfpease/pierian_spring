@@ -4,9 +4,9 @@ class Deck < ApplicationRecord
   has_many :cards,
   primary_key: :id,
   foreign_key: :deck_id,
-  class_name: :Deck
+  class_name: :Card
 
-  
+
 
 
 end
