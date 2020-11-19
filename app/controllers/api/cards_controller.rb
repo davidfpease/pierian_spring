@@ -4,7 +4,6 @@ class Api::CardsController < ApplicationController
     #retrieve all cards associated with the current deck
     @cards = Card.all
     render :index
-
   end
 
   def create
@@ -12,20 +11,28 @@ class Api::CardsController < ApplicationController
     deck_id = params[:deck_id]
     @card = Card.new(card_params)
     @card.deck_id = deck_id
-    @card.save!
-    render :show
 
+    if @card.save!
+      render :show
+    else 
+      render json: @card.errors.full_messages, status: 422
+    end
   end
 
   def update
-
+    @card = Card.find_by(id: params[:id])
+    # debugger
+    if @card.update(card_params)
+      render :show
+    else
+      render json: @card.errors.full_messages, status: :unprocessable_entity
+    end
   end
 
   def destroy
     @card = Card.find(params[:id])
     @card.destroy
     render :show
-
   end
 
   private
@@ -33,7 +40,4 @@ class Api::CardsController < ApplicationController
   def card_params
     params.require(:card).permit(:question, :answer)
   end
-
-
-
 end
