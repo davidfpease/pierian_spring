@@ -106,3 +106,17 @@
    text-align: left;
    margin: 0 0 18px;
  }
+
+ div.demo-button-container {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-top: 10px;
+ }
+
+ button.demo-button {
+    background-color: #3faee0;
+    border-radius: 23px;
+    padding: 5px;
+    color: white;
+ }
