@@ -10,6 +10,7 @@ import {
 import Modal from './modal/modal';
 import GreetingContainer from "./greeting/greeting_container";
 import DashboardContainer from './dashboard/dashboard_container';
+import CardsContainer from './study/cards_container';
 import SignupFormContainer from './session_form/signup_form_container';
 import LoginFormContainer from './session_form/login_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
@@ -20,6 +21,7 @@ const App = () => (
         <GreetingContainer />
     <Switch>
       <Route path="/dashboard" component={DashboardContainer}/>
+      <Route path="/study/:deck_id" component={CardsContainer} />
       {/*
       <AuthRoute path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignupFormContainer} />
