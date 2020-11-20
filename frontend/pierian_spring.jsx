@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import * as APIUtil from './util/session_api_util';
 import * as CardUtil from './util/cards_api_util';
 import * as DeckActions from './actions/deck_actions';
+import * as thunkActions from './actions/session_actions';
 import configureStore from './store/store';
 import Root from './components/root';
 import thunk from 'redux-thunk';
