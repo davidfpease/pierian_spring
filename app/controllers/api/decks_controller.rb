@@ -13,7 +13,8 @@ class Api::DecksController < ApplicationController
 
   def create
     @deck = Deck.new(deck_params)
-
+    #add the creator id to the deck before saving (but not the demo user)
+    @deck.creator_id = current_user.id
     if @deck.save!
       render :show
     else

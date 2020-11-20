@@ -2,8 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import * as APIUtil from './util/session_api_util';
 import * as CardUtil from './util/cards_api_util';
-import { receiveCards, receiveCard, removeCard } from './actions/card_actions';
-import * as thunkActions from './actions/session_actions';
+import * as DeckActions from './actions/deck_actions';
 import configureStore from './store/store';
 import Root from './components/root';
 import thunk from 'redux-thunk';
@@ -32,12 +31,11 @@ document.addEventListener("DOMContentLoaded", () => {
   window.signup = APIUtil.signup;
   window.logout = APIUtil.logout;
   window.fetchAllCards = CardUtil.fetchAllCards;
-  window.updateCard = CardUtil.updateCard;
-  window.deleteCard = CardUtil.deleteCard;
-  window.createCard = CardUtil.createCard;
-  window.receiveCards = receiveCards;
-  window.receiveCard = receiveCard;
-  window.removeCard = removeCard;
+  window.fetchAllDecks = DeckActions.fetchAllDecks;
+
+  window.updateDeck = DeckActions.updateDeck;
+  window.deleteDeck = DeckActions.deleteDeck;
+  window.createDeck = DeckActions.createDeck;
 
 
   window.getState = store.getState;
