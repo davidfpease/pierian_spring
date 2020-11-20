@@ -1,12 +1,13 @@
 import { connect } from 'react-redux';
-import Deck from './deck';
+import Dashboard from './dashboard';
 import {fetchAllDecks, 
         createDeck, 
         updateDeck, 
         deleteDeck } from '../../actions/deck_actions';
+import { logout } from '../../actions/session_actions';
 
 const mstp = (state, ownProps) => {
-
+  console.log(ownProps);
   return {
     decks: state.entities.decks
   }
@@ -17,6 +18,7 @@ const mdtp = dispatch => ({
   createDeck: (deck)=> dispatch(createDeck(deck)),
   updateDeck: (deck)=> dispatch(updateDeck(deck)),
   deleteDeck: (deckId)=> dispatch(deleteDeck(deckId)),
+  logout: ()=> dispatch(logout()),
 });
 
-export default connect(mstp,mdtp)(Deck);
+export default connect(mstp,mdtp)(Dashboard);
