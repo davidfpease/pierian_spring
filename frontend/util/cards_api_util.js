@@ -7,7 +7,7 @@ export const fetchAllCards = (deck_id) => {
 };
 
 export const createCard = (card, deck_id) => {
-  debugger;
+  //debugger;
   return $.ajax({
     method: 'POST',
     url: `/api/decks/${deck_id}/cards`,
@@ -16,7 +16,7 @@ export const createCard = (card, deck_id) => {
 }
 
 export const updateCard = (card) => {
-  debugger
+  // debugger
   return $.ajax({
     method: 'PATCH',
     url: `/api/cards/${card.id}`,
