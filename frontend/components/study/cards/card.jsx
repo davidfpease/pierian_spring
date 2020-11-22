@@ -9,7 +9,20 @@ const Card = props => {
   return (
     <div>
       <h4>Hello from a card component</h4>
-      <p>{question}</p>
+      {
+        props.revealAnswer === false ? (
+          <div>
+            <p>{question}</p>
+            <button onClick={(e)=>props.clickReveal(e)}>Reveal Answer</button>
+          </div>
+        ) : (
+          <div>
+              <p>{props.card.answer}</p>
+              <button onClick={(e)=>props.clickScore(e)}>Log Score</button>
+            </div>
+        )
+
+      }
     </div>
   )
 };

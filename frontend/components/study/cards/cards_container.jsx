@@ -6,14 +6,14 @@ import { fetchAllCards, updateCard } from '../../../actions/card_actions';
 import { connect } from 'react-redux';
 
 const mstp = (state, ownProps) => {
-  debugger;
+  // debugger;
   return {
     cards: Object.keys(state.entities.cards).map(key => state.entities.cards[key]),
   }
 }
 
 const mdtp = dispatch => {
-  debugger;
+  // debugger;
   return {
     updateCard: (card) => dispatch(updateCard(card)),
     fetchAllCards: (deckId) => dispatch(fetchAllCards(deckId)),

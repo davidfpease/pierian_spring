@@ -4,11 +4,15 @@ import Card from './card';
 class CardIndex extends React.Component {
   constructor(props){
     super(props);
-    this.state = {cards: { },
+    this.state = {cards: [],
                   nextCard: null,
                   prevCard: null,
-                  userScores: [],  
+                  userScores: [],
+                  revealAnswer: false,
+                  cardIndex: 0,  
                 }
+    this.clickReveal = this.clickReveal.bind(this);
+    this.clickScore = this.clickScore.bind(this);
   }
 
   componentDidMount(){
@@ -16,18 +20,36 @@ class CardIndex extends React.Component {
     // debugger;
   }
 
+  clickReveal(e) {
+    e.stopPropagation();
+    //alert("yahtzee");
+    this.setState({revealAnswer: true});
+    debugger;
+  }
+
+  clickScore(e) {
+    e.stopPropagation();
+    let i = this.state.cardIndex;
+    this.setState({
+      cardIndex: ++i,
+      revealAnswer: false,
+    })
+
+  }
+
   render(){
     const { cards } = this.props;
-    debugger;
-    //logic here to determine which card to render
-      //display next card
-      //update 
-
-      let i = 0;
-      let card;
-      if(cards) {
-        card= <Card card={cards[i]}/>
-      }
+    let i = this.state.cardIndex;
+    let card;
+    if(cards && i < cards.length) {
+      card= <Card card={cards[i]} clickReveal={this.clickReveal} 
+                  revealAnswer={this.state.revealAnswer}
+                  clickScore={this.clickScore}/>
+    } else {
+      card = (
+        <div>No more Cards</div>
+      )
+    }
 
     return(
       <div>
