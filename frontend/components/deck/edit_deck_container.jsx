@@ -9,14 +9,15 @@ const mstp = (state, ownProps) => {
   
   return {
     errors: state.errors.session,
-    //deck: ownProps.deck////  how do I push the deck to be edited to the edit form via the modal?
+    deck: ownProps.deck,
+    closeModal: ownProps.closeModal,////  how do I push the deck to be edited to the edit form via the modal?
   }
 };
 
 const mdtp = dispatch => {
   return {
     updateDeck: (deck) => dispatch(updateDeck(deck)),
-    closeModal: () => dispatch(closeModal()),
+    //closeModal: () => dispatch(closeModal()),
   }
 };
 
