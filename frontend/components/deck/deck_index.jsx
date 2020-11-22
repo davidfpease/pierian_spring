@@ -8,7 +8,6 @@ class DeckIndex extends React.Component {
   }
 
   componentDidMount() {
-    // debugger;
     this.props.fetchAllDecks();
   }
 
@@ -27,7 +26,8 @@ class DeckIndex extends React.Component {
                 key={`deck${deck.id}`} 
                 deck={deck}
                 editDeck={this.props.updateDeck}
-                deleteDeck={this.props.deleteDeck}/>
+                deleteDeck={this.props.deleteDeck}
+                openModal={this.props.openModal}/>
               )
             })
           }

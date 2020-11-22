@@ -4,6 +4,7 @@ import { fetchAllDecks,
         createDeck,
         updateDeck, 
         deleteDeck } from '../../actions/deck_actions';
+import { openModal } from '../../actions/modal_actions';
 
 import { connect } from 'react-redux';
 
@@ -21,6 +22,7 @@ const mdtp = (dispatch) => {
     createDeck: (deck) => dispatch(createDeck(deck)),
     updateDeck: (deck) => dispatch(updateDeck(deck)),
     deleteDeck: (deckId) => dispatch(deleteDeck(deckId)),
+    openModal: (modalType) => dispatch(openModal(modalType)),
   }
 };
 
