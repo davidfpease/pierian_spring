@@ -8,7 +8,7 @@ import EditDeckContainer from '../deck/edit_deck_container';
 
 function Modal({ modal, closeModal}) {
   
-  debugger;
+  //debugger;
   if (!modal) {
     return null;
   }
@@ -36,7 +36,7 @@ function Modal({ modal, closeModal}) {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  debugger;
+  //debugger;
   return {
     modal: state.ui.modal
   };

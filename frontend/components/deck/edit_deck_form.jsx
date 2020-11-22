@@ -11,7 +11,7 @@ class EditDeckForm extends React.Component {
   }
 
   componentDidMount() {
-    debugger;
+    // debugger;
     //this.setState({this.props.deck});
   }
 
@@ -29,7 +29,7 @@ class EditDeckForm extends React.Component {
   }
 
   render() {
-    debugger;
+    // debugger;
     return (
       <div className="edit-deck-form-container">
         <form onSubmit={this.handleSubmit}>

@@ -7,7 +7,7 @@ import {fetchAllDecks,
 import { logout } from '../../actions/session_actions';
 
 const mstp = (state, ownProps) => {
-  console.log(ownProps);
+  //console.log(ownProps);
   return {
     decks: state.entities.decks
   }
