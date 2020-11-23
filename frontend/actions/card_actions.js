@@ -29,9 +29,17 @@ export const removeCard = (cardId) => {
   }
 }
 
-export const fetchAllCards = (deck_id) => {
+export const fetchAllCardsInDeck = (deck_id) => {
   return dispatch =>{
-    return CardUtil.fetchAllCards(deck_id).then(cards=>{
+    return CardUtil.fetchAllCardsInDeck(deck_id).then(cards=>{
+      return dispatch(receiveCards(cards))
+    })
+  }
+};
+
+export const fetchAllCards = () => {
+  return dispatch =>{
+    return CardUtil.fetchAllCards().then(cards=>{
       return dispatch(receiveCards(cards))
     })
   }

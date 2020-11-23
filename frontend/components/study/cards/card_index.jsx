@@ -16,7 +16,7 @@ class CardIndex extends React.Component {
   }
 
   componentDidMount(){
-    this.props.fetchAllCards(this.props.deckId);
+    this.props.fetchAllCardsInDeck(this.props.deckId);
     // debugger;
   }
 

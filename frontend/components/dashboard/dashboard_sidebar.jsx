@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ProfileContainer from './profile_container';
 
 const DashboardSidebar = (props) => {
   //profile
@@ -9,8 +10,8 @@ const DashboardSidebar = (props) => {
   //classes
 
   return (
-    <div className="dashboard-sidebar">
-
+    <div className="dashboard-sidebar group">
+      <ProfileContainer />
 
 
     </div>

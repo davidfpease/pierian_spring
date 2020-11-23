@@ -1,8 +1,16 @@
-export const fetchAllCards = (deck_id) => {
+export const fetchAllCardsInDeck = (deck_id) => {
 
   return $.ajax({
     method: 'GET',
     url: `/api/decks/${deck_id}/cards`,
+  })
+};
+
+export const fetchAllCards = () => {
+
+  return $.ajax({
+    method: 'GET',
+    url: `/api/cards`,
   })
 };
 

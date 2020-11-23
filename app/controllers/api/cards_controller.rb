@@ -3,8 +3,12 @@ class Api::CardsController < ApplicationController
   def index
     #retrieve all cards associated with the current deck
     deck_id = params[:deck_id]
-
-    @cards = Card.where("deck_id = ?", deck_id)
+    # debugger
+    if deck_id
+      @cards = Card.where("deck_id = ?", deck_id)
+    else
+      @cards = Card.all
+    end
     render :index
   end
 

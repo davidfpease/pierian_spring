@@ -7,7 +7,7 @@ const Dashboard = (props) => {
   // debugger;
   return (
     <div>
-      <DashboardSidebar logout={props.logout}/>
+      <DashboardSidebar />
       <DeckIndexContainer />
     </div>
   )

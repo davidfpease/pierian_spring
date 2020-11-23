@@ -1,7 +1,7 @@
 import React from 'react';
 import { openModal } from '../../../actions/modal_actions';
 import CardIndex from './card_index';
-import { fetchAllCards, updateCard } from '../../../actions/card_actions';
+import { fetchAllCardsInDeck, updateCard } from '../../../actions/card_actions';
 
 import { connect } from 'react-redux';
 
@@ -16,7 +16,7 @@ const mdtp = dispatch => {
   // debugger;
   return {
     updateCard: (card) => dispatch(updateCard(card)),
-    fetchAllCards: (deckId) => dispatch(fetchAllCards(deckId)),
+    fetchAllCardsInDeck: (deckId) => dispatch(fetchAllCardsInDeck(deckId)),
     openModal: (modalType) => dispatch(openModal(modalType)),
   }
 }
