@@ -3,14 +3,22 @@ import { Link, Redirect } from 'react-router-dom';
 import DeckIndexContainer from '../deck/deck_index_container';
 import DashboardSidebar from './dashboard_sidebar';
 
-const Dashboard = (props) => {
+class Dashboard extends React.Component {
   // debugger;
-  return (
-    <div>
-      <DashboardSidebar />
-      <DeckIndexContainer />
-    </div>
-  )
+  componentDidMount(){
+    this.props.fetchAllCards();
+    this.props.fetchAllDecks();
+  }
+
+
+  render(){
+    return (
+      <div>
+        <DashboardSidebar />
+        <DeckIndexContainer />
+      </div>
+    )
+    };
 };
 
 export default Dashboard;

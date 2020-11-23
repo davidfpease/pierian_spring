@@ -4,6 +4,7 @@ import {fetchAllDecks,
         createDeck, 
         updateDeck, 
         deleteDeck } from '../../actions/deck_actions';
+import { fetchAllCards } from '../../actions/card_actions';
 import { logout } from '../../actions/session_actions';
 
 const mstp = (state, ownProps) => {
@@ -15,6 +16,7 @@ const mstp = (state, ownProps) => {
 
 const mdtp = dispatch => ({
   fetchAllDecks: ()=> dispatch(fetchAllDecks()),
+  fetchAllCards: () => dispatch(fetchAllCards()),
   createDeck: (deck)=> dispatch(createDeck(deck)),
   updateDeck: (deck)=> dispatch(updateDeck(deck)),
   deleteDeck: (deckId)=> dispatch(deleteDeck(deckId)),

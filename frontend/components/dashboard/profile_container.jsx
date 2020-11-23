@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import Profile from './profile';
 import { fetchAllCards } from '../../actions/card_actions';
+import { fetchAllDecks }  from '../../actions/deck_actions';
 
 /*
 entities:
@@ -22,12 +23,14 @@ const mstp = (state) => {
   return {
     currentUser: state.entities.users[state.session.id],
     allCards: state.entities.cards,
+    allDecks: state.entities.decks,
   };
 };
 
 const mdtp = dispatch => ({
   logout: () => dispatch(logout()),
   fetchAllCards: () => dispatch(fetchAllCards()),
+  fetchAllDecks: () => dispatch(fetchAllDecks()),
 });
 
 export default connect(mstp, mdtp)(Profile);
