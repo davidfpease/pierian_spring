@@ -1,14 +1,17 @@
 import React from 'react';
 import { ReactReduxContext } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
+import { BsFillGearFill, BsPerson, BsToggles, BsBoxArrowRight } from 'react-icons/bs';
+import { CgProfile } from 'react-icons/cg';
 
 const UserStats = (props) => {
   //debugger;
   return (
     <div>
-      <h2>This is a test of internal component</h2>
-      <h3>Total cards: {props.totalCards}</h3>
-      <h3>Total decks: {props.totalDecks}</h3>
+      <div className="user-stats">
+        <span>{props.totalCards} Total Cards </span>
+        <span> • {props.totalDecks} Decks Created</span>
+      </div>
     </div>
 
   )
@@ -50,18 +53,32 @@ class Profile extends React.Component{
 
     return (
       <div>
-        hello from the profile component.
-        <button onClick={this.props.logout}>Log Out</button>
         <div className="user">
           <div className="user-avatar">
-
+            <CgProfile />
           </div>
-          <h3 className="user-name">{this.props.currentUser.first_name}</h3>
+          <div className="user-name">{this.props.currentUser.first_name}</div>
           <div className="user-stats">
             <UserStats totalCards={count} totalDecks={ownDecks.length}/>
           </div>
-
         </div>
+        <div className="options-gear">
+            <BsFillGearFill />
+        </div>
+        <ul className="options-menu">
+          <li>
+            < BsPerson/>
+            <a href='/'>View Profile</a>
+          </li>
+          <li>
+            <BsToggles />
+            <a href='/'>Manage Account</a>
+          </li>
+          <li onClick={this.props.logout}>
+            <BsBoxArrowRight />
+            <button >Log Out</button>
+          </li>
+        </ul>
         
 
       </div>
