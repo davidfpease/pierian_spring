@@ -15,8 +15,8 @@ class DeckIndex extends React.Component {
     const { decks } = this.props;
     //debugger;
     return(
-      <div>
-        <h1>Hello from the DeckIndex</h1>
+      <div className="deck-index">
+        <div className="available-decks">Available Decks</div>
         <ul>
           {
             decks.map(deck=>{

@@ -1,0 +1,128 @@
+.dashboard-sidebar {
+  height: 100vh;
+  width: 160px;
+  min-width: 160px;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background-color: #324054;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.dashboard {
+  display: flex;
+}
+
+.deck-index{
+  padding: 15px;
+  width: 100%;
+}
+.available-decks {
+  color: #28a5dc;
+  font-size: 36px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.user {
+  position: relative;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.options-menu {
+  background-color: #f4f6f6;
+  font-size: 14px;
+  color: #222;
+  top: -10px;
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: 4px;
+  min-width: 160px;
+  padding: 10px 0px;
+  position: absolute;
+  top: 37px;
+  left: 136px;
+  z-index: 3;
+  text-decoration: none;
+}
+
+.options-menu li {
+    margin-left: 0px;
+    display: flex;
+    align-items: center;
+    padding: 2px;
+}
+
+.options-menu li:hover {
+  color: #fff;
+  background-color: #5aa6d6;
+  cursor: pointer;
+}
+
+.options-menu p {
+  margin-left: 10px;
+}
+
+#menu-triangle {
+  color: #f4f6f6;
+  position: relative;
+  top: -18;
+  z-index: 13;
+}
+
+.user-avatar {
+  font-size: 36px;
+  background-color: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.avatar-image{
+  height: 36px;
+  color: #0b5585;
+}
+
+.options-gear {
+  position: absolute;
+  top: 0px;
+  right: 5px;
+  color: rgb(255, 255, 255);
+  z-index: 13;
+}
+
+.options-gear:hover {
+  color: rgb(40, 165, 220);
+}
+
+.user-name h3 {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  margin-bottom: 0px;
+  color: hsla(0,0%,100%,.9);
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.user-stats {
+  text-align: center;
+  color: hsla(0,0%,100%,.9);
+  font-size: 10px;
+  font-weight: 300;
+  text-decoration: none;
+}
+
+li svg {
+  padding-left: 3px;
+}

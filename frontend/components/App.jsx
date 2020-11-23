@@ -22,6 +22,7 @@ const App = () => (
     <Switch>
       <Route path="/dashboard" component={DashboardContainer}/>
       <Route path="/study/:deck_id" component={Study} />
+      <Route path="/profile" render={() => <div>hi</div>}/>
       {/*
       <AuthRoute path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignupFormContainer} />

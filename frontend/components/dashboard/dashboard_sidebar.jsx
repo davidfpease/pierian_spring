@@ -10,7 +10,7 @@ const DashboardSidebar = (props) => {
   //classes
 
   return (
-    <div className="dashboard-sidebar group">
+    <div className="dashboard-sidebar">
       <ProfileContainer />
 
 

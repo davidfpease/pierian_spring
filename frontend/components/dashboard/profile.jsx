@@ -3,6 +3,7 @@ import { ReactReduxContext } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 import { BsFillGearFill, BsPerson, BsToggles, BsBoxArrowRight } from 'react-icons/bs';
 import { CgProfile } from 'react-icons/cg';
+import { VscTriangleUp } from 'react-icons/vsc';
 
 const UserStats = (props) => {
   //debugger;
@@ -24,7 +25,32 @@ class Profile extends React.Component{
     super(props);
     this.state = {
       numCards: 0,
+      showMenu: false,
     }
+    this.showMenu = this.showMenu.bind(this);
+    this.closeMenu = this.closeMenu.bind(this);
+  }
+
+  showMenu(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    if (!this.state.showMenu){
+      this.setState({showMenu: true}, () => {
+          document.addEventListener('click', this.closeMenu);
+        }
+      );
+    } else {
+      // debugger;
+      this.closeMenu();
+    }
+  }
+
+  closeMenu() {
+    // debugger;
+    this.setState({showMenu: false}, () => {
+        document.removeEventListener('click', this.closeMenu);
+      } 
+    );
   }
 
   
@@ -53,33 +79,47 @@ class Profile extends React.Component{
 
     return (
       <div>
-        <div className="user">
-          <div className="user-avatar">
-            <CgProfile />
+        <Link style={{ textDecoration: 'none' }} to={`/profile`}>
+          <div className="user">
+            <div className="user-avatar">
+              <div className="avatar-image">
+                <CgProfile />
+              </div>
+            </div>
+            <button className="options-gear" onClick={this.showMenu}>
+                <BsFillGearFill />
+            </button>
+            <div className="user-name">
+              <h3>{this.props.currentUser.first_name}</h3>
+            </div>
+            <div className="user-stats">
+              <UserStats totalCards={count} totalDecks={ownDecks.length}/>
+            </div>
           </div>
-          <div className="user-name">{this.props.currentUser.first_name}</div>
-          <div className="user-stats">
-            <UserStats totalCards={count} totalDecks={ownDecks.length}/>
-          </div>
-        </div>
-        <div className="options-gear">
-            <BsFillGearFill />
-        </div>
-        <ul className="options-menu">
-          <li>
-            < BsPerson/>
-            <a href='/'>View Profile</a>
-          </li>
-          <li>
-            <BsToggles />
-            <a href='/'>Manage Account</a>
-          </li>
-          <li onClick={this.props.logout}>
-            <BsBoxArrowRight />
-            <button >Log Out</button>
-          </li>
-        </ul>
-        
+        </Link>
+        {
+          this.state.showMenu 
+          ? (
+            <div className="options-menu">
+              <ul >
+                <li>
+                  < BsPerson/>
+                  <p>View Profile</p>
+                </li>
+                <li>
+                  <BsToggles />
+                  <p >Manage Account</p>
+                </li>
+                <li onClick={this.props.logout}>
+                  <BsBoxArrowRight />
+                  <p>Log Out</p>
+                </li>
+              </ul>
+            </div>
+          ) : (
+            null
+          )
+        }
 
       </div>
     )
