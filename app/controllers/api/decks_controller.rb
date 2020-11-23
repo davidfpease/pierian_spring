@@ -24,6 +24,7 @@ class Api::DecksController < ApplicationController
 
   def update
     @deck = Deck.find_by(id: params[:id])
+    # debugger
     if @deck.update(deck_params)
       render :show
     else

@@ -24,9 +24,11 @@ class DeckItem extends React.Component {
   // { deck, editDeck, deleteDeck, openModal } = this.props;
   render(){
     let deck = this.props.deck;
+    //debugger;
     return (
       <li>
-        <DeckEditModal deck={deck} display={this.state.displayModal} />
+        <DeckEditModal deck={deck} display={this.state.displayModal} 
+                        closeModal={this.closeModal}/>
         <Link to={`/study/${deck.id}`}><h3>{deck.title}</h3></Link>
         <button onClick={()=>deleteDeck(deck.id)}>Delete Deck</button>
         <button onClick={(e)=> this.displayModal(e)}>Edit Deck</button>

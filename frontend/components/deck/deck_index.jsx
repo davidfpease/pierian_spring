@@ -13,7 +13,7 @@ class DeckIndex extends React.Component {
 
   render(){
     const { decks } = this.props;
-    // debugger;
+    //debugger;
     return(
       <div>
         <h1>Hello from the DeckIndex</h1>
@@ -27,7 +27,7 @@ class DeckIndex extends React.Component {
                 deck={deck}
                 editDeck={this.props.updateDeck}
                 deleteDeck={this.props.deleteDeck}
-                openModal={this.props.openModal}/>
+                />
               )
             })
           }

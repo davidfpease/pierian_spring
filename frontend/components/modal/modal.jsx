@@ -4,7 +4,6 @@ import { receiveErrors } from '../../actions/session_actions';
 import { connect } from 'react-redux';
 import LoginFormContainer from '../session_form/login_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
-import EditDeckContainer from '../deck/edit_deck_container';
 
 function Modal({ modal, closeModal}) {
   
@@ -19,9 +18,6 @@ function Modal({ modal, closeModal}) {
       break;
     case 'signup':
       component = <SignupFormContainer />;
-      break;
-    case 'editDeck':
-      component = <EditDeckContainer />
       break;
     default:
       return null;

@@ -16,11 +16,14 @@ export const createDeck = (deck) => {
 }
 
 export const updateDeck = (deck) => {
-  //debugger;
+  let newDeck = {title: deck.title,
+    objective: deck.objective };
+    
+  debugger;
   return $.ajax({
     method: 'PATCH',
     url: `/api/decks/${deck.id}`,
-    data: { deck },
+    data: { deck: newDeck },
   })
 }
 

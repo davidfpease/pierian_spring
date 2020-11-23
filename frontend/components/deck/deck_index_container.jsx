@@ -22,7 +22,6 @@ const mdtp = (dispatch) => {
     createDeck: (deck) => dispatch(createDeck(deck)),
     updateDeck: (deck) => dispatch(updateDeck(deck)),
     deleteDeck: (deckId) => dispatch(deleteDeck(deckId)),
-    openModal: (modalType) => dispatch(openModal(modalType)),
   }
 };
 

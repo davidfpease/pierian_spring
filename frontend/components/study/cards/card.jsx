@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Card = props => {
-  debugger;
+  //debugger;
   let question = "null";
   if (props.card){
     question = props.card.question;

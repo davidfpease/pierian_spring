@@ -24,7 +24,7 @@ class CardIndex extends React.Component {
     e.stopPropagation();
     //alert("yahtzee");
     this.setState({revealAnswer: true});
-    debugger;
+    //debugger;
   }
 
   clickScore(e) {

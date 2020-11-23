@@ -6,6 +6,7 @@ class EditDeckForm extends React.Component {
     this.state = {
       title: props.deck.title,
       objective: props.deck.objective,
+      id: props.deck.id
     }
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -17,12 +18,16 @@ class EditDeckForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const deck = Object.assign({}, this.state);
-    this.props.updateDeck(deck);
+     debugger;
+
+    //extra attribute of id: is making it to the database under 'deck'
+    const newDeck = this.state;
+    this.props.updateDeck(newDeck);
     this.props.closeModal();
   }
 
   update(field) {
+    debugger;
     return e => this.setState({
       [field]: e.currentTarget.value
     });
@@ -33,7 +38,10 @@ class EditDeckForm extends React.Component {
     return (
       <div className="edit-deck-form-container">
         <form onSubmit={this.handleSubmit}>
+          <div onClick={()=>this.props.closeModal()} className="close-x">
+            <img src={window.close_x} />
 
+          </div> 
           <label className="input-descriptor">Title
             <input className="login-input" type="text" 
             value={this.state.title}
@@ -51,6 +59,7 @@ class EditDeckForm extends React.Component {
           
           <div>
 
+            <button onClick={()=>this.props.closeModal()}>Cancel</button>
             <button type="submit">Save</button>
           </div>
 
