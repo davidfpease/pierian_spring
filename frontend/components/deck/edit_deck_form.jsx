@@ -18,7 +18,7 @@ class EditDeckForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-     debugger;
+    //  debugger;
 
     //extra attribute of id: is making it to the database under 'deck'
     const newDeck = this.state;
@@ -27,7 +27,7 @@ class EditDeckForm extends React.Component {
   }
 
   update(field) {
-    debugger;
+    // debugger;
     return e => this.setState({
       [field]: e.currentTarget.value
     });
