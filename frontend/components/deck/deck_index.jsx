@@ -56,6 +56,7 @@ class DeckIndex extends React.Component {
             </li>
           </ul>
         </div>
+        <div className="deck-list-container">
             <ul className="deck-list">
               {
                 decks.map(deck=>{
@@ -72,7 +73,7 @@ class DeckIndex extends React.Component {
                 })
               }
             </ul>
-
+          </div>
         </div>
     )
   }

@@ -71,7 +71,7 @@ a {
     margin-left: 0px;
     display: flex;
     align-items: center;
-    padding: 2px;
+    //padding: 2px;
 }
 
 .options-menu li:hover {
@@ -142,7 +142,7 @@ a {
 }
 
 li svg {
-  padding-left: 3px;
+  //padding-left: 3px;
 }
 
 .deck-action-buttons {
@@ -211,4 +211,125 @@ li svg {
 .tab-item:hover {
   color: #28a5dc;
   border-bottom: 8px solid rgba(18,57,108,.18);
+}
+
+.deck-list-container {
+  box-sizing: border-box;
+}
+
+.deck-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.deck-list li{
+  width: 100%;
+}
+
+.deck-row-contents {
+  display:flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  padding: 36px 36px 36px;
+  border-bottom: 1px solid #ccc;
+}
+
+.deck-info {
+  display: flex;
+}
+
+.deck-info > * {
+  display: inline;
+}
+
+.deck-name, .deck-caption, .deck-name-caption {
+  display: inline;
+}
+
+.deck-name-caption {
+  margin-left: 25px;
+}
+
+.deck-name {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 18px 0 0;
+  color: #28a5dc;
+}
+
+.deck-caption {
+  font-size: 12px;
+  margin: 4px 0 0;
+  color: #999;
+}
+
+.deck-mastery {
+  color: #00a8d7;
+  width: 54px;
+  font-size: 22px;
+  text-align: center;
+}
+
+
+.action-buttons {
+  display: flex;
+  font-size: 14px;
+  color: rgb(124, 130, 142);
+  max-width: 100px;;
+}
+
+.deck-name-caption a {
+  text-decoration: none;
+}
+
+.checkbox-control {
+  display: flex;
+  color: rgb(0, 168, 215);
+  font-size: 22px;
+  font-weight: 400;
+  text-align: center;
+  width: 54px;
+}
+
+li.deck-selection-check-box, li.deck-mastery, .check-box, .deck-mastery {
+  width: 54px;
+}
+
+.deck-options-menu {
+  background-color: #f4f6f6;
+  font-size: 14px;
+  color: #222;
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: 4px;
+  min-width: 160px;
+  padding: 10px 0px;
+  position: absolute;
+  top: 25px;
+  left: -136px;
+  z-index: 400;
+  text-decoration: none;
+}
+
+.deck-options-menu li {
+    margin-left: 0px;
+    display: flex;
+    align-items: center;
+}
+
+.deck-options-menu li:hover {
+  color: #fff;
+  background-color: #5aa6d6;
+  cursor: pointer;
+}
+
+.deck-options-dropdown {
+  position: relative;
+
+}
+
+.options-button {
+  display: flex;
 }
