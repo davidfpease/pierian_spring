@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
   window.login = thunkActions.login;
   window.signup = APIUtil.signup;
-  window.logout = APIUtil.logout;
+  window.logout = thunkActions.logout;
   window.fetchAllCards = CardUtil.fetchAllCards;
   window.fetchAllDecks = DeckActions.fetchAllDecks;
 

@@ -55,6 +55,8 @@ class Profile extends React.Component{
 
   
   render(){
+    //profile.jsx
+    debugger;
     let count = 0;
     const ownDecks = [];
     //collect all decks created by current user
@@ -110,7 +112,10 @@ class Profile extends React.Component{
                   <BsToggles />
                   <p >Manage Account</p>
                 </li>
-                <li onClick={this.props.logout}>
+                <li onClick={()=>{
+                  this.props.logout();
+                  }
+                }>
                   <BsBoxArrowRight />
                   <p>Log Out</p>
                 </li>
