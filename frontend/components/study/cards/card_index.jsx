@@ -1,5 +1,7 @@
 import React from 'react';
 import Card from './card';
+import CardHeader from './card_header.jsx';
+
 
 class CardIndex extends React.Component {
   constructor(props){
@@ -52,9 +54,9 @@ class CardIndex extends React.Component {
     }
 
     return(
-      <div>
-        Hello from the cards index
-        <div>
+      <div className="outer">
+        <CardHeader />
+        <div className="card-container-outer">
             {card}
         </div>
       </div>

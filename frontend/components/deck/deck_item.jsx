@@ -29,12 +29,15 @@ class DeckItem extends React.Component {
   showDeckMenu(e) {
     e.preventDefault();
     e.stopPropagation();
+    // debugger;
     if (!this.state.showDeckMenu) {
+      // debugger;
       this.setState({ showDeckMenu: true }, () => {
         document.addEventListener('click', this.closeDeckMenu);
       }
       );
     } else {
+      // debugger;
       this.closeDeckMenu();
     }
   }
@@ -106,12 +109,12 @@ class DeckItem extends React.Component {
                         onClick={(e)=>{ this.displayModal(e);
                         this.closeDeckMenu()}}>
                           <div><IoMdCreate /></div>
-                          <div>Edit Deck</div>
+                          <div className="drop-down-text">Edit Deck</div>
                     </li>
                     <li className="dropdown-option"
                         onClick={() => deleteDeck(deck.id)}>
                           <div><IoMdClose /></div>
-                          <div>Delete Deck</div>
+                          <div className="drop-down-text">Delete Deck</div>
                     </li>
 
                   </ul>

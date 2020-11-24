@@ -56,7 +56,7 @@ class Profile extends React.Component{
   
   render(){
     //profile.jsx
-    debugger;
+    // debugger;
     let count = 0;
     const ownDecks = [];
     //collect all decks created by current user

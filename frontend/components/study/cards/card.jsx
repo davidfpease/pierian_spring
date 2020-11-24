@@ -1,4 +1,6 @@
 import React from 'react';
+import { IoMdCreate } from 'react-icons/io';
+
 
 const Card = props => {
   //debugger;
@@ -7,13 +9,23 @@ const Card = props => {
     question = props.card.question;
   }
   return (
-    <div>
-      <h4>Hello from a card component</h4>
+    <div className="card">
+      
       {
         props.revealAnswer === false ? (
-          <div>
-            <p>{question}</p>
-            <button onClick={(e)=>props.clickReveal(e)}>Reveal Answer</button>
+          <div className="card-question">
+            <div className="card-question-text">
+              <div className="card-face-header">
+                <div className="q-icon">Q</div>
+                <div className="question-edit-icon"><IoMdCreate /></div>
+              </div>
+              <div className="question-text">
+                <p>{question}</p>
+              </div>
+            </div>
+              <div className="reveal-button" onClick={(e)=>props.clickReveal(e)}>
+                Reveal Answer
+              </div>
           </div>
         ) : (
           <div>
