@@ -23,6 +23,8 @@ const App = () => (
       <Route path="/dashboard" component={DashboardContainer}/>
       <Route path="/study/:deck_id" component={Study} />
       <Route path="/profile" render={() => <div>hi</div>}/>
+      <Route path="/decks/:deck_id/cards" render={() => <div>hi from card edit page</div>}/>
+
       {/*
       <AuthRoute path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignupFormContainer} />

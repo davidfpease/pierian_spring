@@ -13,6 +13,7 @@ const mstp = (state, ownProps) => {
   return {
     decks: Object.keys(state.entities.decks).map(key=> state.entities.decks[key]),
     currentUser: state.entities.users[state.session.id],
+    cards: state.entities.cards,
   }
 }
 

@@ -56,7 +56,7 @@ class DeckIndex extends React.Component {
             </li>
           </ul>
         </div>
-            <ul>
+            <ul className="deck-list">
               {
                 decks.map(deck=>{
                   //debugger;
@@ -64,6 +64,7 @@ class DeckIndex extends React.Component {
                     <DeckItem
                     key={`deck${deck.id}`} 
                     deck={deck}
+                    cards={this.props.cards}
                     editDeck={this.props.updateDeck}
                     deleteDeck={this.props.deleteDeck}
                     />
