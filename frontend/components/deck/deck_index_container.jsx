@@ -12,6 +12,7 @@ const mstp = (state, ownProps) => {
   // debugger;
   return {
     decks: Object.keys(state.entities.decks).map(key=> state.entities.decks[key]),
+    currentUser: state.entities.users[state.session.id],
   }
 }
 

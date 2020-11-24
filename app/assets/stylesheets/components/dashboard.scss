@@ -14,13 +14,31 @@
   display: flex;
 }
 
-.deck-index{
-  padding: 15px;
+.deck-index {
   width: 100%;
 }
+
+.deck-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 30px;
+}
+
+.first-row {
+  padding: 36px;
+  height: 130px;
+  min-height: 130px;
+  display: flex;
+
+  //justify-content: flex-start;
+  //flex-direction: column;
+}
+
 .available-decks {
   color: #28a5dc;
   font-size: 36px;
+  font-weight: 700;
 }
 
 a {
@@ -125,4 +143,72 @@ a {
 
 li svg {
   padding-left: 3px;
+}
+
+.deck-action-buttons {
+  display: flex;
+  align-items: flex-start;
+}
+
+.deck-action-button {
+  font-size: 18px;
+  color: hsla(220,7%,52%,.66);
+  height: 24px;
+  width: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.deck-action-button:hover {
+  color: #28a5dc;
+  background-color: rgba(0,0,0,.1);
+  border-radius: 50%;
+}
+
+.deck-creator-name a{
+  color: #28a5dc;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16px;
+}
+
+.deck-creator {
+  color: rgba(38, 63, 87, 0.8);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16px;
+}
+
+.deck-image-icon {
+  height: 130px;
+  width: 130px;
+}
+
+.tabs {
+  height: 42px;
+  border-bottom: 1px solid rgba(46,64,86,.26);
+  display: flex;
+  width: 100%;
+  font-size: 14px;
+  color: #333;
+  background-color: rgba(5, 101, 156, 0.08);
+  justify-content: space-around;
+}
+
+.tab-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 42px;
+  box-sizing: border-box;
+  padding-top: 8px;
+  border-bottom: 8px solid transparent;
+  cursor: pointer;
+}
+
+.tab-item:hover {
+  color: #28a5dc;
+  border-bottom: 8px solid rgba(18,57,108,.18);
 }
