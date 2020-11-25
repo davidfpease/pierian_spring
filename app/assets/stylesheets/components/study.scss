@@ -8,10 +8,16 @@
   background-color: #324054;
   overflow-x: hidden;
   padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .study {
   display: flex;
+}
+.card {
+  height: 75%;
 }
 
 .card-question {
@@ -21,7 +27,8 @@
 .card-question-text {
   padding: 24px;
   margin: 24px;
-  // display: flex;
+  display: flex;
+  flex-direction: column;
   box-shadow: 0 0 2px 4px hsla(0,0%,39%,.25);
   color: #333;
   border-bottom-color: #ff8a47;
@@ -40,15 +47,18 @@
   position: relative;
   width: calc(100% - 48px);
   height: 32px;
+  color: #bbb;
 
 }
 
 .question-text {
-  justify-content: flex-start;
   margin-top: auto;
   margin-bottom: auto;
   padding: 8px 36px 0;
-  text-align: center;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .reveal-button {
@@ -68,4 +78,127 @@
 
 .outer {
   width: 100%;
+}
+
+.card-container-outer {
+  height: 75%;
+}
+
+.scores ul {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 18px 24px 0;
+  font-size: 24px;
+  height: calc(10vh + 18px);
+  align-items: center;
+  cursor: pointer;
+}
+
+.scores li {
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.scores li:first-child{
+  background-color: #aa0080;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+
+.scores li:nth-child(2){
+  background-color: #ff8a47;
+}
+
+.scores li:nth-child(3){
+  background-color: #ffdd00;
+}
+
+.scores li:nth-child(4){
+  background-color: #7fae2e;
+}
+
+.scores li:nth-child(5){
+  background-color: #00a8d7;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+.small {
+  position: relative;
+}
+
+.small small {
+  position: relative;
+  top: 15px;
+  left: -30px;
+  font-size: 12px;
+  font-weight: 300;
+  color: white;
+}
+
+.how-well {
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+}
+
+.placeholder {
+  font-size: 14px;
+  text-align: center;
+  color: transparent;
+}
+
+// .chevron {
+//   width: 100%;
+//   max-width: 140px;
+//   min-width:  100px;
+// }
+
+//THE CHEVRON CSS IS FROM https://css-tricks.com/the-shapes-of-css/#chevron-shape-via-anthony-ticknor
+.chevron {
+position: relative;
+text-align: center;
+padding: 12px;
+margin-bottom: 11px;
+height: 8px;
+width: 60%;
+transform: rotate(180deg);
+}
+.chevron:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 51%;
+  background: #1c2631;
+  transform: skew(0deg, 33deg);
+}
+.chevron:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 50%;
+  background: #1c2631;
+  transform: skew(0deg, -33deg);
+}
+
+.chevron-ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.chevron-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
