@@ -40,22 +40,33 @@ class CardIndex extends React.Component {
   }
 
   render(){
+    //this needs to select only the cards from the current deck
+    let deck = {};
+    if (this.props.decks){
+      deck = this.props.decks[this.props.deckId]
+    }
     const { cards } = this.props;
+    
+    
+    
+    
+    
     let i = this.state.cardIndex;
     let card;
     if(cards && i < cards.length) {
       card= <Card card={cards[i]} clickReveal={this.clickReveal} 
-                  revealAnswer={this.state.revealAnswer}
-                  clickScore={this.clickScore}/>
+      revealAnswer={this.state.revealAnswer}
+      clickScore={this.clickScore}/>
     } else {
       card = (
         <div>No more Cards</div>
-      )
-    }
-
-    return(
+        )
+      }
+      
+      debugger;
+      return(
       <div className="outer">
-        <CardHeader />
+        <CardHeader deck={deck} numCards={this.props.cards.length}/>
         <div className="card-container-outer">
             {card}
         </div>

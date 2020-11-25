@@ -7,8 +7,11 @@ import { connect } from 'react-redux';
 
 const mstp = (state, ownProps) => {
   // debugger;
+ 
   return {
     cards: Object.keys(state.entities.cards).map(key => state.entities.cards[key]),
+    decks: state.entities.decks,
+    deckId: ownProps.deckId,
   }
 }
 

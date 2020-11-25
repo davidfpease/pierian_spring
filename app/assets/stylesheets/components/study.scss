@@ -202,3 +202,51 @@ transform: rotate(180deg);
   align-items: center;
   flex-direction: column;
 }
+
+.deck-label {
+  color: #888;
+  font-size: 14px;
+  margin-right: 8px;
+}
+
+.header-deck-name {
+  color: #555;
+  font-weight: 600;
+  margin-right: 8px;
+}
+
+.card-and-table-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 26px;
+}
+
+.see-all-cards {
+  font-size: 13px;
+  color: rgb(40,165,220);
+  padding: 5px;
+  height: 29px;
+  box-sizing: border-box;
+  width: 220px;
+  text-align: center;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+}
+
+.see-all-cards span {
+  font-size: 24px;
+}
+
+.see-all-cards:hover {
+  background-color: rgba(0,0,0,.1);
+  border-radius: 36px;
+}
+
+.glasses {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  margin-left: 10px;
+}
