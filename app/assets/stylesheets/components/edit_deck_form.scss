@@ -1,0 +1,145 @@
+.edit-deck-form {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width:768px) {
+ .container {
+  width:750px
+ }
+}
+@media (min-width:992px) {
+ .container {
+  width:970px
+ }
+}
+@media (min-width:1200px) {
+ .container {
+  width:1170px
+ }
+}
+
+table textarea {
+  border: 1px solid #ccc;
+  width: 100%;
+  color: #999;
+  box-sizing: border-box;
+  font-size: 18px;
+  border-radius: 6px;
+  line-height: 0px;
+  padding: 30px;
+}
+
+.edit-deck-form {
+  width: 100%;
+}
+
+.edit-deck-table {
+  width: 100%;
+  border-spacing: 35px 20px;
+}
+
+.edit-deck-table tr {
+  border-bottom: 1px solid #ddd;
+}
+
+table {
+  border-collapse: collapse;
+  margin-bottom: 15px;
+}
+
+.edit-deck-outer {
+  display: flex;
+  justify-content: center;
+}
+
+.filler-cell {
+  width: 15px;
+
+}
+.edit-form-header {
+  text-align: left;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 30px;
+  font-weight: 500;
+}
+.edit-deck-form-close {
+  color: #d9534f;
+  font-size: 30px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.table-td {
+  padding-right: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.table-row th {
+  text-align: left;
+  font-size: 14px;
+  padding: 8px;
+  border-bottom: 2px solid #ddd;
+}
+.table-row-number {
+    padding-left: 15px;
+}
+
+.number-sign {
+  width: 40px;
+  padding-left: 15px;
+}
+
+.edit-deck-form-footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.add-card {
+  color: #3faee0;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.add-card:hover {
+  text-decoration: underline;
+}
+
+.edit-deck-form-actions {
+  font-size: 14px;
+}
+
+.reset-edit-form {
+  box-sizing: border-box;
+  width: 100px;
+  text-align: center;
+  border-radius: 4px;
+  margin-right: 15px;
+  padding: 9px;
+}
+
+.reset-edit-form:hover {
+  border: solid 1px #ddd;
+  background-color: #e6e6e6;
+}
+
+.save-button {
+  padding: 9px;
+  text-align: center;
+  border-radius: 4px;
+  width: 120px;
+  background-color: #29a5dc;
+  border: 1px solid #2196ca;
+}
+.save-button:hover {
+  background-color: #1e86b4;
+  border-color: #186f96;
+  color: #fff;
+}
