@@ -25,11 +25,13 @@ class EditCardsForm extends React.Component {
   }
 
   update(field, cardNum) {
+    // debugger;
     return e => {
       let newCards = this.state.cards.slice();
       let editCard = newCards[cardNum];
       editCard[field] = e.currentTarget.value;
       this.setState({cards: newCards});
+      debugger;
       }
   }
 
@@ -50,11 +52,11 @@ class EditCardsForm extends React.Component {
 
   addNewCard(){
     let newCards = this.state.cards;
-    newCards.push({question: "",
-                    answer: "",
+    newCards.push({question: "Question",
+                    answer: "Answer",
                     deck_id: this.props.deck.id});
     this.setState({cards: newCards});
-    debugger;
+    //debugger;
   }
 
   reset(e){
@@ -62,7 +64,7 @@ class EditCardsForm extends React.Component {
     let cardsArray = Object.keys(this.props.cards).map(key => this.props.cards[key]);
     let cards = cardsArray.filter(card => card.deck_id === this.props.deck.id);
     let cardsCopy = _.cloneDeep(cards);
-    debugger;
+    // debugger;
     this.setState({ cards: cardsCopy,
                     deletedCards: [] });
   }
@@ -79,7 +81,7 @@ class EditCardsForm extends React.Component {
       if ('id' in card && card.id in storeCards){
         if (storeCards[card.id].question.valueOf() != card.question.valueOf() ||
           storeCards[card.id].answer.valueOf() != card.answer.valueOf()){
-          debugger;
+          // debugger;
           this.props.updateCard(card);
         }
       } else {
@@ -107,7 +109,7 @@ class EditCardsForm extends React.Component {
   render(){
     
     const deck = this.props.deck || {title: ""};
-
+    // debugger;
     return(
       <div className="edit-deck-outer">
         <div className="edit-deck-form-cont container">

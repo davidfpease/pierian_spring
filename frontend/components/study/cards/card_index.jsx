@@ -63,7 +63,7 @@ class CardIndex extends React.Component {
         )
       }
       
-      debugger;
+      // debugger;
       return(
       <div className="outer">
         <CardHeader deck={deck} numCards={this.props.cards.length}/>
