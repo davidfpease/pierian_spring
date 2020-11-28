@@ -53,6 +53,8 @@ table {
 .edit-deck-outer {
   display: flex;
   justify-content: center;
+  position: relative;
+  top: 140px;
 }
 
 .filler-cell {
@@ -142,4 +144,9 @@ table {
   background-color: #1e86b4;
   border-color: #186f96;
   color: #fff;
+}
+
+
+.nav-bar {
+  border-bottom: 1px rgb(238, 238, 238) solid;
 }

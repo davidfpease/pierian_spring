@@ -24,7 +24,7 @@ const App = () => (
       <ProtectedRoute path="/dashboard" component={DashboardContainer}/>
       <Route path="/study/:deck_id" component={Study} />
       <Route path="/profile" render={() => <div>hi</div>}/>
-      <Route path="/decks/:deck_id/cards" component={EditCardsFormContainer}/>
+      <ProtectedRoute path="/decks/:deck_id/cards" component={EditCardsFormContainer}/>
       
 
       {/*

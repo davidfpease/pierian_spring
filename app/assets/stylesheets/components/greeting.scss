@@ -18,7 +18,10 @@
 
 .nav-bar-item {
   display: flex;
+  justify-content: center;
+  //border-top: 5px solid transparent;
 }
+
 
 .nav-bar-button {
   //padding: 10px;
@@ -67,6 +70,7 @@
 
 .nav-option {
   padding: 0 10px;
+  width: 100%;
 }
 
 .nav-cta {

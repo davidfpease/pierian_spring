@@ -2,7 +2,9 @@ import React from 'react';
 import { BiPlusCircle } from 'react-icons/bi';
 import { FaWindowClose } from 'react-icons/fa';
 import _ from 'lodash';
-import { useHistory } from "react-router-dom";
+import { Link } from 'react-router-dom';
+
+//import NavBar from './navbar';
 
 class EditCardsForm extends React.Component {
   constructor(props){
@@ -31,7 +33,7 @@ class EditCardsForm extends React.Component {
       let editCard = newCards[cardNum];
       editCard[field] = e.currentTarget.value;
       this.setState({cards: newCards});
-      debugger;
+      // debugger;
       }
   }
 
@@ -111,55 +113,90 @@ class EditCardsForm extends React.Component {
     const deck = this.props.deck || {title: ""};
     // debugger;
     return(
-      <div className="edit-deck-outer">
-        <div className="edit-deck-form-cont container">
-          <h2 className="edit-form-header">Flashcards in "{deck.title}"</h2>
-          <form className="edit-deck-form" onSubmit={this.handleSubmit}>
-            <table className="edit-deck-table">
-              <thead>
-                <tr className="table-row">
-                  <th className='number-sign'>#</th>
-                  <th>Question</th>
-                  <th></th>
-                  <th>Answer</th>
-                  <th> </th>
-                </tr>
-              </thead>
-              <tbody>
-              {
-                this.state.cards.map((card, index) =>(
-                  <tr key={index}>
-                    <td className="table-row-number">
-                      <div>
-                        {index + 1}
-                      </div>
-                    </td>
-                    <td className='table-td'>
-                      <textarea onChange={this.update('question', index)} value={card.question}></textarea>
-                      
-                    </td>
-                    <td className="filler-cell"></td>
-                    <td className='table-td'>
-                      <textarea onChange={this.update('answer', index)} value={card.answer}></textarea>
-                    </td>
-                    <td>
-                      <div onClick={() => this.tempDeleteCard(index)} className="edit-deck-form-close"><FaWindowClose /></div>
-                    </td>
-                    
-                  </tr>
-
-                ) )
-              }
-              </tbody>
-            </table>
-            <div className="edit-deck-form-footer">
-              <div className="add-card" onClick={() => this.addNewCard()}><span><BiPlusCircle/></span>Add Card</div>
-              <div className="edit-deck-form-actions">
-                <button onClick={(e)=>this.reset(e)} className='reset-edit-form'>Reset</button>
-                <button className='save-button' type='submit'>Save this Deck</button>
+      <div>
+        <div className="nav-bar">
+          <div className="nav-bar-logo">
+            <Link to='/'>
+              <img id="logo" src={window.logo} />
+            </Link>
+          </div>
+        <div className="nav-items  edit-form-nav-items">
+          <ul className="nav-items-list">
+            <li className="nav-bar-item nav-option">
+              <button className="nav-bar-button" >Find Flashcards</button>
+            </li>
+            <li className="nav-bar-item nav-option">
+              <button className="nav-bar-button" >Why It Works</button>
+            </li>
+            <li className="nav-bar-item nav-option">
+              <button className="nav-bar-button" >More..</button>
+            </li>
+          </ul>
+          <ul className="nav-ctas">
+            <li className="nav-bar-item">
+              <div className="nav-cta">
+                <button className="nav-bar-button" onClick={()=>this.props.logout()}>Log Out</button>
               </div>
-            </div>
-          </form>
+            </li>
+            <li className="nav-bar-item">
+              <div className="nav-cta nav-cta-login">
+                <button className="get-started-button" >Upgrade to Pro</button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+        <div className="edit-deck-outer">
+          <div className="edit-deck-form-cont container">
+            <h2 className="edit-form-header">Flashcards in "{deck.title}"</h2>
+            <form className="edit-deck-form" onSubmit={this.handleSubmit}>
+              <table className="edit-deck-table">
+                <thead>
+                  <tr className="table-row">
+                    <th className='number-sign'>#</th>
+                    <th>Question</th>
+                    <th></th>
+                    <th>Answer</th>
+                    <th> </th>
+                  </tr>
+                </thead>
+                <tbody>
+                {
+                  this.state.cards.map((card, index) =>(
+                    <tr key={index}>
+                      <td className="table-row-number">
+                        <div>
+                          {index + 1}
+                        </div>
+                      </td>
+                      <td className='table-td'>
+                        <textarea onChange={this.update('question', index)} value={card.question}></textarea>
+                        
+                      </td>
+                      <td className="filler-cell"></td>
+                      <td className='table-td'>
+                        <textarea onChange={this.update('answer', index)} value={card.answer}></textarea>
+                      </td>
+                      <td>
+                        <div onClick={() => this.tempDeleteCard(index)} className="edit-deck-form-close"><FaWindowClose /></div>
+                      </td>
+                      
+                    </tr>
+
+                  ) )
+                }
+                </tbody>
+              </table>
+              <div className="edit-deck-form-footer">
+                <div className="add-card" onClick={() => this.addNewCard()}><span><BiPlusCircle/></span>Add Card</div>
+                <div className="edit-deck-form-actions">
+                  <button onClick={(e)=>this.reset(e)} className='reset-edit-form'>Reset</button>
+                  <button className='save-button' type='submit'>Save this Deck</button>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     );
