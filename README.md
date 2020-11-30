@@ -14,7 +14,7 @@
   
 ### Challenges:
 
-The edit deck form provided multiple challneges to overcome, including:
+The edit deck form provided multiple challenges to overcome, including:
 -   Edit fields for all cards in a deck
 -   Pre-populate edit fields with existing card information
 -   Ability to delete existing cards
