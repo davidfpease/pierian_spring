@@ -32,7 +32,10 @@ export default class CreateDeckForm extends Component {
     return (
       <div>
         <div className="new-modal-body">
-          <div className="mobile-branding">Brainscape</div>
+          <div class="close-x" onClick={this.props.closeModal}>
+            <img src="http://localhost:3000/assets/close-outline-db3fcdd21c62170ac1beaafbb0dc9f5a53d629d4095a8284b2d30fb1431af6d7.svg"/>
+
+          </div>
           <div className="icon-button close-button close-modal-button"><i className="ion-ios-close-empty"></i></div>
           <div className="new-modal-content">
             <div className="new-modal-title">Create New Deck</div>
@@ -50,7 +53,10 @@ export default class CreateDeckForm extends Component {
               </div>
             </form>
               <div className="new-modal-actions">
-                <div onClick={this.handleSubmit} className="pill-button is-disabled resolve-modal-button" label="Continue"><span className="label">Continue</span></div>
+                <div onClick={this.handleSubmit} 
+                className={this.state.deckTitle.length > 0 ? "pill-button" : "pill-button is-disabled"} 
+                  label="Continue"><span className="label">Continue</span>
+                </div>
               </div>
           </div>
         </div>

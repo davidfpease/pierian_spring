@@ -87,14 +87,22 @@ class DeckItem extends React.Component {
               </div>
             </li>
             <li className="action-buttons">
-              <div className="browse-button deck-action-button">
-                <IoIosGlasses />
-              </div>
-              <Link to={`/decks/${deck.id}/cards`}>
-                <div className="deck-cards-edit-modal deck-action-button" title="Edit the Cards in this Deck">
-                  <IoMdCreate />
+              {numCards > 0 ? (
+                <div>
+                  <div className="browse-button deck-action-button">
+                    <IoIosGlasses />
+                  </div>
+                  <Link to={`/decks/${deck.id}/cards`}>
+                    <div className="deck-cards-edit-modal deck-action-button" title="Edit the Cards in this Deck">
+                      <IoMdCreate />
+                    </div>
+                  </Link>
                 </div>
-              </Link>
+              ):(
+                <Link to={`/decks/${deck.id}/cards`}>
+                  <button className="pill-button add-cards">Add Cards</button>
+                </Link>
+              )}
               <div className="action-buttons deck-action-button" onClick={this.showDeckMenu}>
                 <div className="options-button">
                   <IoIosMore />

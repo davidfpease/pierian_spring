@@ -34,7 +34,7 @@ class DeckIndex extends React.Component {
     if (decks.length === 0){
       deckDisplay = "Decks";
     } else {
-      deckDisplay = `Decks(${decks.length})`;
+      deckDisplay = `Decks (${decks.length})`;
     }
     
     let tab = <div className="deck-list-container">
