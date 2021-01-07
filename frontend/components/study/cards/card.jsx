@@ -3,7 +3,7 @@ import { IoMdCreate } from 'react-icons/io';
 
 
 const Card = props => {
-  //debugger;
+  //
   let question = "null";
   if (props.card){
     question = props.card.question;

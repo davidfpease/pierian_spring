@@ -15,7 +15,7 @@ export const fetchAllCards = () => {
 };
 
 export const createCard = (card, deck_id) => {
-  //debugger;
+  //
   return $.ajax({
     method: 'POST',
     url: `/api/decks/${deck_id}/cards`,

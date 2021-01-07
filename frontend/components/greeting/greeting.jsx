@@ -5,8 +5,9 @@ import Banner from './banner';
 
 //{ currentUser, logout }
 const Greeting = (props) => {
-  // debugger;
+  // 
   const sessionLinks = () => (
+    <div>
     <div className="background-image">
       <img id="logo" src={window.image_5} />
       <div className="nav-bar">
@@ -43,6 +44,7 @@ const Greeting = (props) => {
             </li>
           </ul>
         </div>
+      </div>
       </div>
       <Banner openModal={props.openModal}/>
     </div>

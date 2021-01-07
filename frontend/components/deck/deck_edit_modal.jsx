@@ -2,7 +2,7 @@ import React from 'react';
 import EditDeckContainer from './edit_deck_container';
 
 const DeckEditModal = (props)=> {
-  //debugger;
+  //
   if (props.display === false) {
     return null;
   }

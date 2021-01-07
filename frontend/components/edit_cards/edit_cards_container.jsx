@@ -6,7 +6,7 @@ import { logout } from '../../actions/session_actions';
 import { updateCard, fetchAllCardsInDeck, deleteCard, createCard} from '../../actions/card_actions'
 
 const mstp = (state, ownProps) => {
-  //debugger;
+  //
   return {
     //might not even need this......
     cards: state.entities.cards,

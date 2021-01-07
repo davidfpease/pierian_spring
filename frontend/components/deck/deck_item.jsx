@@ -29,21 +29,21 @@ class DeckItem extends React.Component {
   showDeckMenu(e) {
     e.preventDefault();
     e.stopPropagation();
-    // debugger;
+    // 
     if (!this.state.showDeckMenu) {
-      // debugger;
+      // 
       this.setState({ showDeckMenu: true }, () => {
         document.addEventListener('click', this.closeDeckMenu);
       }
       );
     } else {
-      // debugger;
+      // 
       this.closeDeckMenu();
     }
   }
 
   closeDeckMenu() {
-    // debugger;
+    // 
     this.setState({ showDeckMenu: false }, () => {
       document.removeEventListener('click', this.closeDeckMenu);
     }
@@ -63,7 +63,7 @@ class DeckItem extends React.Component {
     })
 
 
-    //debugger;
+    //
     return (
       <li>
         <div >

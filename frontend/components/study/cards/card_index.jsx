@@ -19,14 +19,13 @@ class CardIndex extends React.Component {
 
   componentDidMount(){
     this.props.fetchAllCardsInDeck(this.props.deckId);
-    // debugger;
+    
   }
 
   clickReveal(e) {
     e.stopPropagation();
-    //alert("yahtzee");
     this.setState({revealAnswer: true});
-    //debugger;
+    //
   }
 
   clickScore(e) {
@@ -63,7 +62,7 @@ class CardIndex extends React.Component {
         )
       }
       
-      // debugger;
+       
       return(
       <div className="outer">
         <CardHeader deck={deck} numCards={this.props.cards.length}/>

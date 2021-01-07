@@ -6,7 +6,7 @@ import { CgProfile } from 'react-icons/cg';
 import { VscTriangleUp } from 'react-icons/vsc';
 
 const UserStats = (props) => {
-  //debugger;
+  //
   return (
     <div>
       <div className="user-stats">
@@ -40,13 +40,13 @@ class Profile extends React.Component{
         }
       );
     } else {
-      // debugger;
+      // 
       this.closeMenu();
     }
   }
 
   closeMenu() {
-    // debugger;
+    // 
     this.setState({showMenu: false}, () => {
         document.removeEventListener('click', this.closeMenu);
       } 
@@ -56,7 +56,7 @@ class Profile extends React.Component{
   
   render(){
     //profile.jsx
-    // debugger;
+    // 
     let count = 0;
     const ownDecks = [];
     //collect all decks created by current user

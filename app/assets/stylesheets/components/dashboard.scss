@@ -208,6 +208,10 @@ li svg {
   cursor: pointer;
 }
 
+.tab-item.active {
+  border-bottom: 8px solid rgba(18,57,108,.36);
+}
+
 .tab-item:hover {
   color: #28a5dc;
   border-bottom: 8px solid rgba(18,57,108,.18);

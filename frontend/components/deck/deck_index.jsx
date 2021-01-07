@@ -1,22 +1,75 @@
 import React from 'react';
 import DeckItem from './deck_item';
+import AboutTab from './about_tab';
+import LearnersTab from './learners_tab';
+import AddDeck from './add_deck';
 import { Link, Redirect } from 'react-router-dom';
 import { IoIosPlayCircle, IoMdShare, IoIosMore } from 'react-icons/io';
 
 class DeckIndex extends React.Component {
   constructor(props) {
     super(props);
-
+    this.state = {
+      tabSelected: "decks",
+    }
+    this.handleTabClick = this.handleTabClick.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchAllDecks();
   }
 
+  handleTabClick(e){
+    
+    this.setState({
+      tabSelected: e.currentTarget.id,
+    })
+  }
+
   render(){
     const { decks } = this.props;
-    //debugger;
-    return(
+    const currentTab = this.state.tabSelected;
+
+    let deckDisplay;
+    if (decks.length === 0){
+      deckDisplay = "Decks";
+    } else {
+      deckDisplay = `Decks(${decks.length})`;
+    }
+    
+    let tab = <div className="deck-list-container">
+      <ul className="deck-list">
+        {
+          decks.map(deck => {
+            //
+            return (
+              <DeckItem
+              key={`deck${deck.id}`}
+              deck={deck}
+              cards={this.props.cards}
+              editDeck={this.props.updateDeck}
+              deleteDeck={this.props.deleteDeck}
+              />
+              )
+            })
+          }
+          <AddDeck openModal={this.props.openModal} createDeck={this.props.createDeck}/>
+      </ul>
+    </div>
+
+  switch (this.state.tabSelected){
+    case('learners'):
+      tab = <LearnersTab />
+      break;
+    case('about'):
+      tab = <AboutTab />
+      break;
+    default:
+      break;
+  }
+
+  
+  return(
       <div className="deck-index">
         <div className="first-row">
           <div className="deck-image-icon">
@@ -45,35 +98,18 @@ class DeckIndex extends React.Component {
 
         <div className="second-row">    
           <ul className="tabs">
-            <li className="tab-item">
+            <li onClick={this.handleTabClick} id='about' className={currentTab === 'about' ? "tab-item active" : "tab-item"}>
               <div className="tab-label">About</div>
             </li>
-            <li className="tab-item">
-              <div className="tab-label">Decks</div>
+            <li onClick={this.handleTabClick} id='decks' className={currentTab === 'decks' ? "tab-item active" : "tab-item"}>
+              <div className="tab-label">{deckDisplay}</div>
             </li>
-            <li className="tab-item">
+            <li onClick={this.handleTabClick} id='learners' className={currentTab === 'learners' ? "tab-item active" : "tab-item"}>
               <div className="tab-label">Learners</div>
             </li>
           </ul>
         </div>
-        <div className="deck-list-container">
-            <ul className="deck-list">
-              {
-                decks.map(deck=>{
-                  //debugger;
-                  return (
-                    <DeckItem
-                    key={`deck${deck.id}`} 
-                    deck={deck}
-                    cards={this.props.cards}
-                    editDeck={this.props.updateDeck}
-                    deleteDeck={this.props.deleteDeck}
-                    />
-                  )
-                })
-              }
-            </ul>
-          </div>
+        {tab}
         </div>
     )
   }

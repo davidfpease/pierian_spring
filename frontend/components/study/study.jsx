@@ -3,7 +3,7 @@ import CardIndexContainer from './cards/cards_container';
 import StudySideBar from './study_sidebar.jsx';
 
 const Study = (props) => {
-  //debugger;
+  //
   return (
     <div className="study">
       

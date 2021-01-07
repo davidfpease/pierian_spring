@@ -12,13 +12,13 @@ class EditDeckForm extends React.Component {
   }
 
   componentDidMount() {
-    // debugger;
+    // 
     //this.setState({this.props.deck});
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    //  debugger;
+    //  
 
     //extra attribute of id: is making it to the database under 'deck'
     const newDeck = this.state;
@@ -27,14 +27,14 @@ class EditDeckForm extends React.Component {
   }
 
   update(field) {
-    // debugger;
+    // 
     return e => this.setState({
       [field]: e.currentTarget.value
     });
   }
 
   render() {
-    // debugger;
+    // 
     return (
       <div className="edit-deck-form-container">
         <form onSubmit={this.handleSubmit}>

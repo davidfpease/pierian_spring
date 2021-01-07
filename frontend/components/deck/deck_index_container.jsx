@@ -7,23 +7,26 @@ import { fetchAllDecks,
 import { openModal } from '../../actions/modal_actions';
 
 import { connect } from 'react-redux';
+import modal from '../modal/modal';
 
 const mstp = (state, ownProps) => {
-  // debugger;
+  // 
   return {
     decks: Object.keys(state.entities.decks).map(key=> state.entities.decks[key]),
     currentUser: state.entities.users[state.session.id],
     cards: state.entities.cards,
+
   }
 }
 
 const mdtp = (dispatch) => {
-  // debugger;
+  // 
   return {
     fetchAllDecks: () => dispatch(fetchAllDecks()),
     createDeck: (deck) => dispatch(createDeck(deck)),
     updateDeck: (deck) => dispatch(updateDeck(deck)),
     deleteDeck: (deckId) => dispatch(deleteDeck(deckId)),
+    openModal: (modal)  => dispatch(openModal(modal)),
   }
 };
 

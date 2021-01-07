@@ -4,10 +4,11 @@ import { receiveErrors } from '../../actions/session_actions';
 import { connect } from 'react-redux';
 import LoginFormContainer from '../session_form/login_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
+import CreateDeckFormContainer from '../deck/create_deck_form_container';
 
 function Modal({ modal, closeModal}) {
   
-  //debugger;
+  
   if (!modal) {
     return null;
   }
@@ -18,6 +19,9 @@ function Modal({ modal, closeModal}) {
       break;
     case 'signup':
       component = <SignupFormContainer />;
+      break;
+    case 'createDeck':
+      component = <CreateDeckFormContainer />
       break;
     default:
       return null;
@@ -31,8 +35,8 @@ function Modal({ modal, closeModal}) {
   );
 }
 
-const mapStateToProps = (state, ownProps) => {
-  //debugger;
+const mapStateToProps = (state) => {
+  //
   return {
     modal: state.ui.modal
   };

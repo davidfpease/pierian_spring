@@ -7,7 +7,7 @@ export const fetchAllDecks = () => {
 };
 
 export const createDeck = (deck) => {
-  //debugger;
+  //
   return $.ajax({
     method: 'POST',
     url: `/api/decks`,
@@ -19,7 +19,7 @@ export const updateDeck = (deck) => {
   let newDeck = {title: deck.title,
     objective: deck.objective };
     
-  // debugger;
+  // 
   return $.ajax({
     method: 'PATCH',
     url: `/api/decks/${deck.id}`,

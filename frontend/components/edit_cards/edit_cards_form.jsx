@@ -27,29 +27,29 @@ class EditCardsForm extends React.Component {
   }
 
   update(field, cardNum) {
-    // debugger;
+    // 
     return e => {
       let newCards = this.state.cards.slice();
       let editCard = newCards[cardNum];
       editCard[field] = e.currentTarget.value;
       this.setState({cards: newCards});
-      // debugger;
+      // 
       }
   }
 
   tempDeleteCard(cardNum) {
     let newCards = this.state.cards.slice();
-    // debugger;
+    // 
     let existingDeleted = this.state.deletedCards.slice();
     let deletedCard = newCards[cardNum];
-    // debugger;
+    // 
     newCards.splice(cardNum,1);
     existingDeleted.push(deletedCard);
     this.setState({
       cards: newCards,
       deletedCards: existingDeleted,
     })
-    // debugger;
+    // 
   }
 
   addNewCard(){
@@ -58,7 +58,7 @@ class EditCardsForm extends React.Component {
                     answer: "Answer",
                     deck_id: this.props.deck.id});
     this.setState({cards: newCards});
-    //debugger;
+    //
   }
 
   reset(e){
@@ -66,7 +66,7 @@ class EditCardsForm extends React.Component {
     let cardsArray = Object.keys(this.props.cards).map(key => this.props.cards[key]);
     let cards = cardsArray.filter(card => card.deck_id === this.props.deck.id);
     let cardsCopy = _.cloneDeep(cards);
-    // debugger;
+    // 
     this.setState({ cards: cardsCopy,
                     deletedCards: [] });
   }
@@ -83,7 +83,7 @@ class EditCardsForm extends React.Component {
       if ('id' in card && card.id in storeCards){
         if (storeCards[card.id].question.valueOf() != card.question.valueOf() ||
           storeCards[card.id].answer.valueOf() != card.answer.valueOf()){
-          // debugger;
+          // 
           this.props.updateCard(card);
         }
       } else {
@@ -111,7 +111,7 @@ class EditCardsForm extends React.Component {
   render(){
     
     const deck = this.props.deck || {title: ""};
-    // debugger;
+    // 
     return(
       <div>
         <div className="nav-bar">
