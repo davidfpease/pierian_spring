@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import LoginFormContainer from '../session_form/login_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
 import CreateDeckFormContainer from '../deck/create_deck_form_container';
+import NoCardsModal from '../deck/no_cards_modal';
 
 function Modal({ modal, closeModal}) {
   
@@ -22,6 +23,9 @@ function Modal({ modal, closeModal}) {
       break;
     case 'createDeck':
       component = <CreateDeckFormContainer />
+      break;
+    case 'noCards':
+      component = <NoCardsModal closeModal={closeModal}/>
       break;
     default:
       return null;

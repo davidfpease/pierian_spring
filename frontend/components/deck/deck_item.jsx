@@ -79,12 +79,19 @@ class DeckItem extends React.Component {
               100%
             </li>
             <li className="deck-info">
-              <div className="deck-name-caption">
-                <Link to={`/study/${deck.id}`}>
-                  <h4 className="deck-name">{deck.title}</h4>
-                  <p className="deck-caption"> {numCards} cards in this deck</p>
-                </Link>
-              </div>
+              {numCards > 0 ? (
+                <div className="deck-name-caption">
+                  <Link to={`/study/${deck.id}`}>
+                    <h4 className="deck-name">{deck.title}</h4>
+                    <p className="deck-caption"> {numCards} cards in this deck</p>
+                  </Link>
+                </div>
+              ):(
+                <div className="deck-name-caption" onClick={()=>this.props.openModal('noCards')}>
+                    <h4 className="deck-name">{deck.title}</h4>
+                    <p className="deck-caption"> {numCards} cards in this deck</p>
+                </div>
+              )}
             </li>
             <li className="action-buttons">
               {numCards > 0 ? (

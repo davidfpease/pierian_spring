@@ -49,6 +49,8 @@ class DeckIndex extends React.Component {
               cards={this.props.cards}
               editDeck={this.props.updateDeck}
               deleteDeck={this.props.deleteDeck}
+              openModal={this.props.openModal}
+              closeModal={this.props.closeModal}
               />
               )
             })

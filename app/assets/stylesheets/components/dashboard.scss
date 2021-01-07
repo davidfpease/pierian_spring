@@ -1,5 +1,5 @@
 .dashboard-sidebar {
-  height: 100vh;
+  height: inherit;
   width: 160px;
   min-width: 160px;
   z-index: 2;
@@ -288,7 +288,8 @@ li svg {
   justify-content: flex-end;
   font-size: 14px;
   color: rgb(124, 130, 142);
-  max-width: 125px;;
+  max-width: 125px;
+  align-items: center;
 }
 
 .deck-name-caption a {
