@@ -24,6 +24,9 @@ class EditCardsForm extends React.Component {
     let cards = cardsArray.filter(card => card.deck_id === this.props.deck.id);
     let cardsCopy = _.cloneDeep(cards);
     this.setState({cards: cardsCopy});
+    if(cardsCopy.length === 0){
+      this.addNewCard();
+    }
   }
 
   update(field, cardNum) {
@@ -66,9 +69,20 @@ class EditCardsForm extends React.Component {
     let cardsArray = Object.keys(this.props.cards).map(key => this.props.cards[key]);
     let cards = cardsArray.filter(card => card.deck_id === this.props.deck.id);
     let cardsCopy = _.cloneDeep(cards);
-    // 
-    this.setState({ cards: cardsCopy,
-                    deletedCards: [] });
+    debugger;
+    if (cardsCopy.length === 0) {
+      this.setState({
+        cards: [{
+          question: "Question",
+          answer: "Answer",
+          deck_id: this.props.deck.id
+        }],
+        deleteCards: [],
+      })      
+    } else {
+      this.setState({ cards: cardsCopy,
+                      deletedCards: [] });
+    }
   }
 
   handleSubmit(e) {
