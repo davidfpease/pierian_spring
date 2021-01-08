@@ -40,13 +40,13 @@ const Card = props => {
                 </div>
               </div>
               <div className="how-well">How well do you know this?</div>
-              <div className="scores" onClick={(e)=>props.clickScore(e)}>
+              <div className="scores" >
                 <ul>
-                  <li>1<div className="small"><small>Not At All</small></div></li>
-                  <li>2</li>
-                  <li>3</li>
-                  <li>4</li>
-                  <li>5<div className="small"><small>Perfectly</small></div></li>
+                  <li onClick={(e)=>props.clickScore(e)} id="1">1<div className="small"><small>Not At All</small></div></li>
+                  <li onClick={(e)=>props.clickScore(e)} id="2">2</li>
+                  <li onClick={(e)=>props.clickScore(e)} id="3">3</li>
+                  <li onClick={(e)=>props.clickScore(e)} id="4">4</li>
+                  <li onClick={(e)=>props.clickScore(e)} id="5">5<div className="small"><small>Perfectly</small></div></li>
                 </ul>
               </div>
             </div>

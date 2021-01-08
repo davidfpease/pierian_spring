@@ -1,7 +1,7 @@
 .study-sidebar {
   height: 100vh;
-  width: 160px;
-  min-width: 160px;
+  width: 340px;
+  min-width: 340px;
   z-index: 2;
   top: 0;
   left: 0;
@@ -177,7 +177,7 @@ transform: rotate(180deg);
   height: 100%;
   width: 51%;
   background: #1c2631;
-  transform: skew(0deg, 33deg);
+  transform: skew(0deg, 12deg);
 }
 .chevron:after {
   content: '';
@@ -187,14 +187,18 @@ transform: rotate(180deg);
   height: 100%;
   width: 50%;
   background: #1c2631;
-  transform: skew(0deg, -33deg);
+  transform: skew(0deg, -12deg);
 }
 
 .chevron-ul {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: center;
-  width: 100%;
+  width: 60%;
+  height: 100vh;
+  box-sizing: border-box;
+  flex: 1;
+  max-width: 175px;
 }
 .chevron-container {
   width: 100%;
@@ -249,4 +253,39 @@ transform: rotate(180deg);
   align-items: center;
   margin-right: 10px;
   margin-left: 10px;
+}
+
+.chevron.score-1:before {
+  background:#aa0080;
+}
+.chevron.score-1:after {
+  background:#aa0080;
+}
+
+.chevron.score-2:before {
+  background:#ff8a47;
+}
+.chevron.score-2:after {
+  background:#ff8a47;
+}
+
+.chevron.score-3:before {
+  background:#ffdd00;
+}
+.chevron.score-3:after {
+  background:#ffdd00;
+}
+
+.chevron.score-4:before {
+  background:#7fae2e;
+}
+.chevron.score-4:after {
+  background:#7fae2e;
+}
+
+.chevron.score-5:before {
+  background:#00a8d7;
+}
+.chevron.score-5:after {
+  background:#00a8d7;
 }

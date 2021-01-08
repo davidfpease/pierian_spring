@@ -31,6 +31,13 @@ class CardIndex extends React.Component {
   clickScore(e) {
     e.stopPropagation();
     let i = this.state.cardIndex;
+    
+    this.props.receiveScore(
+      {
+        score: e.currentTarget.id,
+        index: i,
+      }
+    )
     this.setState({
       cardIndex: ++i,
       revealAnswer: false,
@@ -45,11 +52,7 @@ class CardIndex extends React.Component {
       deck = this.props.decks[this.props.deckId]
     }
     const { cards } = this.props;
-    
-    
-    
-    
-    
+
     let i = this.state.cardIndex;
     let card;
     if(cards && i < cards.length) {

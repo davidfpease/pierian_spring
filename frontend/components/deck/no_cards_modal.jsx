@@ -9,7 +9,7 @@ export default function NoCardsModal(props) {
         </div>
         <div className="new-modal-content">
           <div className="new-modal-title">This Deck Has No Cards</div>
-          <p className="new-modal-message">Before you can study this deck, you or the Class creator must add cards to this deck.</p>
+          <p className="new-modal-message">Before you can study this deck, you must add cards to this deck.</p>
           <div className="new-modal-actions">
             <div onClick={props.closeModal} className="pill-button resolve-modal-button" label="Ok">
               <span className="label">Ok</span>

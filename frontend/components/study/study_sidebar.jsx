@@ -2,15 +2,21 @@ import React from 'react';
 import DeckInfo from './deck_info.jsx';
 import ProgressMeter from './progress_meter.jsx';
 
-const StudySideBar = (props) => {
+class StudySideBar extends React.Component {
+  constructor(props){
+    super(props);
+  }
 
-  return (
-    <div className="study-sidebar">
-      <DeckInfo />
-      <ProgressMeter />
+  render() {
+    
+    return (
+      <div className="study-sidebar">
+        <DeckInfo />
+        <ProgressMeter progressBar={this.props.progressBar}/>
 
-    </div>
-  )
+      </div>
+    )
+  }
 }
 
 export default StudySideBar;

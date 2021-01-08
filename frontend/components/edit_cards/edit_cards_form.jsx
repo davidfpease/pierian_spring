@@ -69,7 +69,7 @@ class EditCardsForm extends React.Component {
     let cardsArray = Object.keys(this.props.cards).map(key => this.props.cards[key]);
     let cards = cardsArray.filter(card => card.deck_id === this.props.deck.id);
     let cardsCopy = _.cloneDeep(cards);
-    debugger;
+    
     if (cardsCopy.length === 0) {
       this.setState({
         cards: [{

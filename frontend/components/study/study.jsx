@@ -1,6 +1,6 @@
 import React from 'react';
 import CardIndexContainer from './cards/cards_container';
-import StudySideBar from './study_sidebar.jsx';
+import StudySideBar from './study_sidebar_container';
 
 const Study = (props) => {
   //
