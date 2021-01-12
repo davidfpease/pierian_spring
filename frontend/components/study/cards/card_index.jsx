@@ -1,23 +1,24 @@
 import React from 'react';
 import Card from './card';
 import CardHeader from './card_header.jsx';
+import shuffleCards from './shuffleCards.js';
 
 
 class CardIndex extends React.Component {
   constructor(props){
     super(props);
-    this.state = {cards: [],
-                  nextCard: null,
-                  prevCard: null,
-                  userScores: [],
+    this.state = {
                   revealAnswer: false,
                   cardIndex: 0,  
                 }
+                
+    this.cards = shuffleCards(props.cards);
     this.clickReveal = this.clickReveal.bind(this);
     this.clickScore = this.clickScore.bind(this);
   }
 
   componentDidMount(){
+    
     this.props.fetchAllCardsInDeck(this.props.deckId);
     
   }
@@ -51,12 +52,16 @@ class CardIndex extends React.Component {
     if (this.props.decks){
       deck = this.props.decks[this.props.deckId]
     }
-    const { cards } = this.props;
+    //const { cards } = this.props;
+//build out to 10 cards if less than 10
+//select the 10 to view if > 10
+
+debugger;
 
     let i = this.state.cardIndex;
     let card;
-    if(cards && i < cards.length) {
-      card= <Card card={cards[i]} clickReveal={this.clickReveal} 
+    if(this.cards && i < this.cards.length) {
+      card= <Card card={this.cards[i]} clickReveal={this.clickReveal} 
       revealAnswer={this.state.revealAnswer}
       clickScore={this.clickScore}/>
     } else {
