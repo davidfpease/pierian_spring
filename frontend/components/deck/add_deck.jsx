@@ -4,7 +4,8 @@ import { GoPlus } from "react-icons/go";
 export default class AddDeck extends Component {
   render() {
     return (
-      <li className="create-new-deck-row" onClick={()=>this.props.openModal('createDeck')}>
+      <li className="create-new-deck-row" 
+        onClick={()=>this.props.openModal({modal: 'createDeck'})}>
         <ul className="deck-row-contents create-new-deck">
           <li className="li-spacer"></li>
           <li className="big-plus-button"><GoPlus /></li>

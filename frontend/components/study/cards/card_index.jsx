@@ -11,7 +11,6 @@ class CardIndex extends React.Component {
                   revealAnswer: false,
                   cardIndex: 0,  
                 }
-                
     this.cards = shuffleCards(props.cards);
     this.clickReveal = this.clickReveal.bind(this);
     this.clickScore = this.clickScore.bind(this);
@@ -20,7 +19,6 @@ class CardIndex extends React.Component {
   componentDidMount(){
     
     this.props.fetchAllCardsInDeck(this.props.deckId);
-    
   }
 
   clickReveal(e) {
@@ -32,17 +30,22 @@ class CardIndex extends React.Component {
   clickScore(e) {
     e.stopPropagation();
     let i = this.state.cardIndex;
-    
+    let card = this.cards[i];
     this.props.receiveScore(
       {
         score: e.currentTarget.id,
         index: i,
       }
-    )
-    this.setState({
-      cardIndex: ++i,
-      revealAnswer: false,
-    })
+      )
+      this.setState({
+        cardIndex: ++i,
+        revealAnswer: false,
+      });
+      
+      card.last_view = new Date();
+      card.number_views += 1;
+      card.score = Math.floor((card.score + e.currentTarget.id)/card.number_views);
+      this.props.calculateMasteryScore(this.props.cards, card);
 
   }
 
@@ -52,11 +55,6 @@ class CardIndex extends React.Component {
     if (this.props.decks){
       deck = this.props.decks[this.props.deckId]
     }
-    //const { cards } = this.props;
-//build out to 10 cards if less than 10
-//select the 10 to view if > 10
-
-debugger;
 
     let i = this.state.cardIndex;
     let card;
@@ -65,9 +63,14 @@ debugger;
       revealAnswer={this.state.revealAnswer}
       clickScore={this.clickScore}/>
     } else {
-      card = (
-        <div>No more Cards</div>
-        )
+
+      //open the checkpoint modal
+      this.props.openModal({
+        modal: 'checkpoint', 
+        package: {deckId: this.props.deckId,
+                  mastery: this.masteryScore},
+      });
+
       }
       
        

@@ -10,7 +10,8 @@ const Banner = props => {
           <button className="cta-button" >
             Find flashcards
           </button>
-          <button className="cta-button neutral" onClick={() => props.openModal('signup')}>Make flashcards</button>
+          <button className="cta-button neutral" 
+            onClick={() => props.openModal({modal: 'signup'})}>Make flashcards</button>
           <button className="video-button">Watch video</button>
         </div>
       </div>

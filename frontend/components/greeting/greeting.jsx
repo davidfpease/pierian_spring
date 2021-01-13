@@ -22,7 +22,10 @@ const Greeting = (props) => {
                 <button className="nav-bar-button" >Find Flashcards</button>
             </li>
             <li className="nav-bar-item nav-option">
-                <button className="nav-bar-button" onClick={() => props.openModal('signup')}>Make Flashcards</button>
+                <button className="nav-bar-button" 
+                  onClick={() => props.openModal({modal: 'signup'})}>
+                  Make Flashcards
+                </button>
             </li>
             <li className="nav-bar-item nav-option">
                 <button className="nav-bar-button" >Why It Works</button>
@@ -34,12 +37,14 @@ const Greeting = (props) => {
           <ul className="nav-ctas">
             <li className="nav-bar-item">
               <div className="nav-cta">
-                <button className="nav-bar-button" onClick={() => props.openModal('login')}>Log In</button>
+                <button className="nav-bar-button" 
+                  onClick={() => props.openModal({modal: 'login'})}>Log In</button>
               </div>
             </li>
             <li className="nav-bar-item">
               <div className="nav-cta nav-cta-login">
-                <button className="get-started-button" onClick={() => props.openModal('signup')}>Get Started</button>
+                <button className="get-started-button" 
+                  onClick={() => props.openModal({modal: 'signup'})}>Get Started</button>
               </div>
             </li>
           </ul>

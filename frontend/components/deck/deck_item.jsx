@@ -76,7 +76,7 @@ class DeckItem extends React.Component {
               </div>
             </li>
             <li className="deck-mastery">
-              100%
+              {Math.floor(100 * this.props.deck.mastery)}%
             </li>
             <li className="deck-info">
               {numCards > 0 ? (
@@ -87,7 +87,7 @@ class DeckItem extends React.Component {
                   </Link>
                 </div>
               ):(
-                <div className="deck-name-caption" onClick={()=>this.props.openModal('noCards')}>
+                <div className="deck-name-caption">
                     <h4 className="deck-name">{deck.title}</h4>
                     <p className="deck-caption"> {numCards} cards in this deck</p>
                 </div>

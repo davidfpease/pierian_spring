@@ -1,7 +1,8 @@
 const shuffleCards = (cards) =>{
-  if (cards  && cards.length < 10) {
-    //shuffle the deck
-    shuffle(cards);
+  //shuffle the deck
+  shuffle(cards);
+
+  if (cards  && cards.length <= 10) {
 
     //fill in the array up to 10 cards
     let i = 0;
@@ -11,6 +12,8 @@ const shuffleCards = (cards) =>{
     }
     // debugger;
     return cards;
+  } else if (cards && cards.length > 10){
+    return cards.slice(0,9);
   }
   return [];
 }

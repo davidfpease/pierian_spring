@@ -4,7 +4,6 @@ export const RECEIVE_CARDS = 'RECEIVE_CARDS';
 export const RECEIVE_CARD = 'RECEIVE_CARD';
 export const REMOVE_CARD = 'REMOVE_CARD';
 
-
 export const receiveCards = cards => {
 
   return {
