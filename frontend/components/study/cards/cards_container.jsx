@@ -11,7 +11,6 @@ const mstp = (state, ownProps) => {
   // the sidebar
  
   return {
-    cards: Object.keys(state.entities.cards).map(key => state.entities.cards[key]),
     deckId: ownProps.deckId,
     deck: state.entities.decks[ownProps.deckId],
   }

@@ -2,6 +2,8 @@ import React from 'react';
 import Card from './card';
 import CardHeader from './card_header.jsx';
 import shuffleCards from './shuffleCards.js';
+import _ from 'lodash';
+
 
 
 class CardIndex extends React.Component {
@@ -11,14 +13,10 @@ class CardIndex extends React.Component {
                   revealAnswer: false,
                   cardIndex: 0,  
                 }
-    this.cards = shuffleCards(props.cards);
+    this.originalCards = props.cards;
+    this.cards = shuffleCards(_.cloneDeep(props.cards));
     this.clickReveal = this.clickReveal.bind(this);
     this.clickScore = this.clickScore.bind(this);
-  }
-
-  componentDidMount(){
-    
-    this.props.fetchAllCardsInDeck(this.props.deckId);
   }
 
   clickReveal(e) {
@@ -30,7 +28,9 @@ class CardIndex extends React.Component {
   clickScore(e) {
     e.stopPropagation();
     let i = this.state.cardIndex;
-    let card = this.cards[i];
+    let cardId = this.cards[i].id;
+    let card = this.originalCards.filter(crd => crd.id === cardId)[0];
+    
     this.props.receiveScore(
       {
         score: e.currentTarget.id,
@@ -44,16 +44,16 @@ class CardIndex extends React.Component {
       
       card.last_view = new Date();
       card.number_views += 1;
-      card.score = Math.floor((card.score + e.currentTarget.id)/card.number_views);
-      this.props.calculateMasteryScore(this.props.cards, card);
-
+      card.score = Math.round((card.score + Number(e.currentTarget.id))/card.number_views);
+      this.props.calculateMasteryScore(this.cards, card);
+      debugger;
   }
 
   render(){
     //this needs to select only the cards from the current deck
     let deck = {};
-    if (this.props.decks){
-      deck = this.props.decks[this.props.deckId]
+    if (this.props.deck){
+      deck = this.props.deck
     }
 
     let i = this.state.cardIndex;
@@ -65,6 +65,9 @@ class CardIndex extends React.Component {
     } else {
 
       //open the checkpoint modal
+      // does not show the last answer before opening modal....
+      // pass mastery score to the modal too
+      
       this.props.openModal({
         modal: 'checkpoint', 
         package: {deckId: this.props.deckId,
