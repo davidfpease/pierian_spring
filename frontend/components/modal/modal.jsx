@@ -24,13 +24,14 @@ function Modal({ modal, closeModal, decks }) {
     case 'createDeck':
       component = <CreateDeckFormContainer />
       break;
-    // case 'noCards':
-    //   component = <NoCardsModal closeModal={closeModal}/>
-    //   break;
     case 'checkpoint':
-      debugger;
-      component = <Checkpoint mastery={decks[modal.package.deckId].mastery} closeModal={closeModal}/>
-      break;
+      return(
+        <div className="modal-background">
+          <div className="modal-child" onClick={e => e.stopPropagation()}>
+            <Checkpoint mastery={modal.package.mastery} closeModal={closeModal}/>
+          </div>
+        </div>
+      )
     default:
       return null;
   }

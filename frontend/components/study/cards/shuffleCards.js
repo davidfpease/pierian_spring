@@ -10,7 +10,7 @@ const shuffleCards = (cards) =>{
       cards.push(cards[i]);
       i++; 
     }
-    // debugger;
+    // 
     return cards;
   } else if (cards && cards.length > 10){
     return cards.slice(0,9);

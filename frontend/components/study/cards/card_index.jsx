@@ -2,6 +2,7 @@ import React from 'react';
 import Card from './card';
 import CardHeader from './card_header.jsx';
 import shuffleCards from './shuffleCards.js';
+import NewModal from './new_modal';
 import _ from 'lodash';
 
 
@@ -13,6 +14,7 @@ class CardIndex extends React.Component {
                   revealAnswer: false,
                   cardIndex: 0,  
                 }
+    this.showModal = false;
     this.originalCards = props.cards;
     this.cards = shuffleCards(_.cloneDeep(props.cards));
     this.clickReveal = this.clickReveal.bind(this);
@@ -45,8 +47,8 @@ class CardIndex extends React.Component {
       card.last_view = new Date();
       card.number_views += 1;
       card.score = Math.round((card.score + Number(e.currentTarget.id))/card.number_views);
-      this.props.calculateMasteryScore(this.cards, card);
-      debugger;
+      this.props.calculateMasteryScore(this.originalCards, card);
+      
   }
 
   render(){
@@ -64,15 +66,10 @@ class CardIndex extends React.Component {
       clickScore={this.clickScore}/>
     } else {
 
-      //open the checkpoint modal
-      // does not show the last answer before opening modal....
-      // pass mastery score to the modal too
-      
-      this.props.openModal({
-        modal: 'checkpoint', 
-        package: {deckId: this.props.deckId,
-                  mastery: this.masteryScore},
-      });
+      card = <NewModal mastery={this.props.mastery}
+                        openModal={this.props.openModal}
+                        deckId={this.props.deckId}
+                        cards={this.originalCards}/>
 
       }
       

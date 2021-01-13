@@ -11,6 +11,7 @@ class StudySideBar extends React.Component {
     
     return (
       <div className="study-sidebar">
+        <h1>{this.props.mastery}% Mastery</h1>
         <DeckInfo />
         <ProgressMeter progressBar={this.props.progressBar}/>
 

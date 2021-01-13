@@ -34,7 +34,6 @@ class Study extends React.Component {
     let index = allCards.findIndex(c => c.id === card.id);
     allCards[index] = card;
 
-
     //recalculate mastery
     let scores = {
       0: 0,
@@ -44,9 +43,16 @@ class Study extends React.Component {
       4: 0,
       5: 0
     }
-
-    allCards.forEach(card => scores[card.score]+= 1)
-    debugger;
+    allCards.forEach(card => scores[card.score]+= 1);
+    let tallies = Object.keys(scores).map(key => (key * scores[key]));
+    
+    let mastery = tallies.reduce((accum, tally) => (accum + tally), 0) / 
+    (allCards.length * 5);
+    
+    mastery = Math.round(mastery*1000) / 10;
+    this.setState({
+      mastery: mastery,
+    })
 
 
   }
