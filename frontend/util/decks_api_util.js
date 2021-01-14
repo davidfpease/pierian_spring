@@ -17,7 +17,8 @@ export const createDeck = (deck) => {
 
 export const updateDeck = (deck) => {
   let newDeck = {title: deck.title,
-    objective: deck.objective };
+    objective: deck.objective,
+    mastery: deck.mastery };
     
   // 
   return $.ajax({

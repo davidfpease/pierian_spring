@@ -1,1 +1,1 @@
-json.extract! @card, :id, :deck_id, :question, :answer
+json.extract! @card, :id, :deck_id, :question, :answer, :score, :number_views, :last_view

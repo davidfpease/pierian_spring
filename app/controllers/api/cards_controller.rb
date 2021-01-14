@@ -35,6 +35,19 @@ class Api::CardsController < ApplicationController
     end
   end
 
+  def bulk
+    params[:cards].each do |val|
+      @card = Card.find_by(id: val[1][:id])
+      @card.update!(val[1].permit(:score, :number_views, :last_view))
+    end
+    
+    @cards = Card.where("deck_id = ?", params[:cards]["0"]["deck_id"])
+    render :index
+
+
+
+  end
+
   def destroy
     @card = Card.find(params[:id])
     @card.destroy
@@ -44,6 +57,6 @@ class Api::CardsController < ApplicationController
   private
 
   def card_params
-    params.require(:card).permit(:question, :answer)
+    params.require(:card).permit(:question, :answer, :score, :last_view, :number_views)
   end
 end

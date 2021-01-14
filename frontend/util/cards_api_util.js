@@ -32,6 +32,15 @@ export const updateCard = (card) => {
   })
 };
 
+export const updateCards = (cards) => {
+  // debugger
+  return $.ajax({
+    method: 'POST',
+    url: `/api/bulk`,
+    data: { cards },
+  })
+};
+
 export const deleteCard = (card_id) => {
 
   return $.ajax({

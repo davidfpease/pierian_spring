@@ -2,7 +2,8 @@ import React from 'react';
 import CardIndex from './cards/card_index';
 import StudySideBar from './study_sidebar_container';
 import { openModal } from '../../actions/modal_actions';
-import { fetchAllCardsInDeck, updateCard } from '../../actions/card_actions';
+import { fetchAllCardsInDeck, updateCard, updateCards } from '../../actions/card_actions';
+import { updateDeck } from '../../actions/deck_actions';
 import { addScore } from '../../actions/progressBar_actions';
 
 import { connect } from 'react-redux';
@@ -43,6 +44,8 @@ class Study extends React.Component {
       4: 0,
       5: 0
     }
+// the math here isn't working...
+
     allCards.forEach(card => scores[card.score]+= 1);
     let tallies = Object.keys(scores).map(key => (key * scores[key]));
     
@@ -73,7 +76,8 @@ class Study extends React.Component {
           deck={this.props.decks[deckId]}
           receiveScore = {this.props.receiveScore}
           updateCard = {this.props.updateCard}
-          updateMastery= {this.props.updateMastery}
+          updateCards = {this.props.updateCards}
+          updateDeck = {this.props.updateDeck}
           openModal = {this.props.openModal}
           />  
       </div>
@@ -95,9 +99,10 @@ const mdtp = dispatch => {
   return {
     receiveScore: score => dispatch(addScore(score)),
     updateCard: (card) => dispatch(updateCard(card)),
+    updateCards: (cards) => dispatch(updateCards(cards)),
     fetchAllCardsInDeck: (deckId) => dispatch(fetchAllCardsInDeck(deckId)),
-    updateMastery: (percent) => dispatch(updateMastery(percent)),
     openModal: (modal) => dispatch(openModal(modal)),
+    updateDeck: (deck) => dispatch(updateDeck(deck)),
   }
 }
 

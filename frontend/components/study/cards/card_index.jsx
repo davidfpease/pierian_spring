@@ -65,11 +65,14 @@ class CardIndex extends React.Component {
       revealAnswer={this.state.revealAnswer}
       clickScore={this.clickScore}/>
     } else {
-
+      
       card = <NewModal mastery={this.props.mastery}
                         openModal={this.props.openModal}
                         deckId={this.props.deckId}
-                        cards={this.originalCards}/>
+                        cards={this.originalCards}
+                        deck={deck}
+                        updateCards={this.props.updateCards}
+                        updateDeck={this.props.updateDeck}/>
 
       }
       

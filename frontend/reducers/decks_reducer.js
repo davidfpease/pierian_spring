@@ -6,6 +6,7 @@ const decksReducer = (state = {}, action) => {
     case RECEIVE_DECKS:
       return action.decks;
     case RECEIVE_DECK:
+      debugger;
       return Object.assign({}, state, { [action.deck.id]: action.deck });
     case REMOVE_DECK:
       let nextState = Object.assign({}, state);

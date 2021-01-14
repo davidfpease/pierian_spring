@@ -7,6 +7,8 @@ Rails.application.routes.draw do
       resources :cards, only: [:index, :create]
     end
     resources :cards, only: [:destroy, :update, :index]
+    match 'bulk', to: 'cards#bulk', via: [:post]
+
   end
 
 

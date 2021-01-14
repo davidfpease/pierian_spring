@@ -60,6 +60,14 @@ export const updateCard = (card) => {
   }
 };
 
+export const updateCards = (cards) => {
+  return dispatch => {
+    return CardUtil.updateCards(cards).then(cards => {
+      return dispatch(receiveCards(cards))
+    })
+  }
+};
+
 export const deleteCard = (cardId) => {
   return dispatch => {
     return CardUtil.deleteCard(cardId).then(()=>{

@@ -8,6 +8,7 @@ export default function Checkpoint(props) {
         <h1>
           {props.mastery}% Mastery
         </h1>
+        <button onClick={props.closeModal}>Close</button>
       </div>
     </div>
   )

@@ -76,7 +76,7 @@ class DeckItem extends React.Component {
               </div>
             </li>
             <li className="deck-mastery">
-              {Math.floor(100 * this.props.deck.mastery)}%
+              {this.props.deck.mastery}%
             </li>
             <li className="deck-info">
               {numCards > 0 ? (
