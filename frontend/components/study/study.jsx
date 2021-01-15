@@ -4,7 +4,7 @@ import StudySideBar from './study_sidebar_container';
 import { openModal } from '../../actions/modal_actions';
 import { fetchAllCardsInDeck, updateCard, updateCards } from '../../actions/card_actions';
 import { updateDeck } from '../../actions/deck_actions';
-import { addScore } from '../../actions/progressBar_actions';
+import { addScore, resetScores } from '../../actions/progressBar_actions';
 
 import { connect } from 'react-redux';
 
@@ -26,7 +26,7 @@ class Study extends React.Component {
   }
 
   componentDidUpdate(prevProps){
-    if (this.props.decks !== prevProps.decks){
+    if (this.props.deck.mastery !== prevProps.deck.mastery){
       this.setState({
         mastery: this.props.decks[this.props.match.params.deck_id].mastery
       })
@@ -75,12 +75,13 @@ class Study extends React.Component {
           deckId={deckId}
           mastery={this.state.mastery}
           cards={this.props.cards}
-          deck={this.props.decks[deckId]}
+          deck={this.props.deck}
           receiveScore = {this.props.receiveScore}
           updateCard = {this.props.updateCard}
           updateCards = {this.props.updateCards}
           updateDeck = {this.props.updateDeck}
           openModal = {this.props.openModal}
+          resetScores = {this.props.resetScores}
           />  
       </div>
     )
@@ -88,12 +89,14 @@ class Study extends React.Component {
 }
 
 const mstp = (state, ownProps) => {
+  let deckId = ownProps.match.params.deck_id;
   let cardIds = Object.keys(state.entities.cards).filter(key =>
-    state.entities.cards[key].deck_id.toString() === ownProps.match.params.deck_id) 
+    state.entities.cards[key].deck_id.toString() === deckId) 
 
   return {
     decks: state.entities.decks,
-    cards: cardIds.map(id => state.entities.cards[id])
+    cards: cardIds.map(id => state.entities.cards[id]),
+    deck: state.entities.decks[deckId]
   }
 }
 
@@ -105,6 +108,7 @@ const mdtp = dispatch => {
     fetchAllCardsInDeck: (deckId) => dispatch(fetchAllCardsInDeck(deckId)),
     openModal: (modal) => dispatch(openModal(modal)),
     updateDeck: (deck) => dispatch(updateDeck(deck)),
+    resetScores: () => dispatch(resetScores()),
   }
 }
 

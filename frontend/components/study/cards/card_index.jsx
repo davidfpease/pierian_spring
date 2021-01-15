@@ -27,6 +27,12 @@ class CardIndex extends React.Component {
     //
   }
 
+  componentDidUpdate(prevProps){
+    if (this.props.mastery !== prevProps.mastery){
+      // debugger;
+    }
+  }
+
   clickScore(e) {
     e.stopPropagation();
     let i = this.state.cardIndex;
@@ -67,14 +73,15 @@ class CardIndex extends React.Component {
       revealAnswer={this.state.revealAnswer}
       clickScore={this.clickScore}/>
     } else {
-      
+      debugger;
       card = <NewModal mastery={this.props.mastery}
                         openModal={this.props.openModal}
                         deckId={this.props.deckId}
                         cards={this.originalCards}
                         deck={deck}
                         updateCards={this.props.updateCards}
-                        updateDeck={this.props.updateDeck}/>
+                        updateDeck={this.props.updateDeck}
+                        resetScores={this.props.resetScores}/>
 
       }
       

@@ -292,15 +292,56 @@ transform: rotate(180deg);
 
 
 
+.mastery-circles {
+  width: 30vh;
+  height: 30vh;
+  position: relative;
+}
 .mastery-circle {
   width: 30vh;
   height: 30vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.mastery-value {
+  position: absolute;
+  top: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 25vh;
+  width: 25vh;
+  justify-content: center;
+  margin: 2.5vh;
+}
+
+.value-data {
+  font-size: 6.5vh;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+.value-label {
+  color: hsla(0,0%,100%,.6);
+  font-size: 2vh;
+  font-weight: 100;
+  margin-top: 5px;
+  text-transform: uppercase;
+}
+
+.circle-action-buttons {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 14px;
+  align-items: center;
 }
 
 
 .svg-circles {
     display: block;
-    margin: 20px auto;
     max-width: 100%;
     transform: rotate(-90deg);
 }
@@ -318,4 +359,60 @@ transform: rotate(180deg);
     text-anchor: middle;
     fill: #fff;
     font-weight: bold;
+}
+
+.svg-circle-mastery {
+  color: hsla(0,0%,100%,.6);
+  font-size: 2vh;
+  font-weight: 100;
+  text-align: center;
+}
+
+.checkpoint-title {
+  font-size: 8vh;
+  font-weight: 400;
+  color:rgb(255, 255, 255)
+}
+
+.fullscreen-checkpoint {
+  color: hsla(0,0%,100%,.7);
+  font-size: 3.5vh;
+  font-weight: 300;
+  text-align: center;
+}
+
+.checkpoint-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  height: 75vh;
+  justify-content: space-between;
+}
+
+.circle-pill-button{
+  margin: 0 18px;
+  background-color: #28a5dc;
+  font-size: 2vh;
+  font-weight: 400;
+  height: 7vh;
+  max-width: 185px;
+  width: 22vh;
+  color: #fff;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  text-align: center;
+  border-radius: 8vh;
+  border: none;
+  padding: 0 4vh;
+  font-family: Open Sans, sans-serif;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.circle-pill-button:hover {
+  background-color: #54b7e3;
 }

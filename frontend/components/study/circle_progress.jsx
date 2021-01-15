@@ -35,7 +35,7 @@ class CircleProgress extends Component {
       return ((scores[key]/totalCards));
     })
     
-    debugger;
+    ;
     const mastery = this.props.mastery / 100;
     const size = 500;
     const center = size / 2;
@@ -58,6 +58,10 @@ class CircleProgress extends Component {
     return (
       <div>
         <div className="mastery-circle">
+          <div className="mastery-value">
+            <div className="value-data">{this.props.mastery}%</div>
+            <div className="value-label">Mastery</div>
+          </div>
           <svg className="svg-circles" viewBox="0 0 500 500" width="100%" height="100%">
             <circle
               className="svg-circle-bg"
@@ -119,18 +123,7 @@ class CircleProgress extends Component {
               strokeDasharray={ circumference }
               strokeDashoffset={ offset1 }
             />
-
-            <svg className="inner-text">
-              <text className="svg-circle-text" x={ center } y={ -1 * center }>
-                {this.props.mastery}%
-              </text>
-            </svg>
-
           </svg>
-        </div>
-        <div className="mastery-value">
-          <div className="value-data">{this.props.mastery}%</div>
-          <div className="value-label">Mastery</div>
         </div>
       </div>
               
@@ -146,26 +139,3 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps, null)(CircleProgress);
-
-/*
-<svg viewBox="0 0 100 100" width="100%" height="100%" >
-                <path d="M 50 3.75 A 46.25 46.25 0 0 1 93.98636387865085 35.70796401015868" strokeWidth="7.5" strokeDasharray="58.119464091411174" strokeDashoffset="116.23892818282235" stroke="#AA0080" fill="none">
-                  <title>Level 1</title>
-                </path>
-                <path d="" strokeWidth="7.5" strokeDasharray="0" strokeDashoffset="0" stroke="#FF8A47" fill="none">
-                  <title>Level 2</title>
-                </path>
-                <path d="" strokeWidth="7.5" strokeDasharray="0" strokeDashoffset="0" stroke="#FFDD00" fill="none">
-                  <title>Level 3</title>
-                </path>
-                <path d="" strokeWidth="7.5" strokeDasharray="0" strokeDashoffset="0" stroke="#7FAE2E" fill="none">
-                  <title>Level 4</title>
-                </path>
-                <path d="M 93.98636387865085 35.70796401015868 A 46.25 46.25 0 1 1 6.013636121349151 35.70796401015867" strokeWidth="7.5" strokeDasharray="174.35839227423352" strokeDashoffset="348.71678454846705" stroke="#00A8D7" fill="none">
-                  <title>Level 5</title>
-                </path>
-                <path d="M 6.013636121349151 35.70796401015867 A 46.25 46.25 0 0 1 49.99999999999999 3.75" strokeWidth="7.5" strokeDasharray="58.119464091411174" strokeDashoffset="116.23892818282235" stroke="#1E2633" fill="none">
-                  <title>Future Progress</title>
-                </path>
-              </svg>
-            */

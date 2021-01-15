@@ -8,7 +8,8 @@ export default class NewModal extends Component {
     let newDeck = this.props.deck;
     newDeck.mastery = this.props.mastery;
     this.props.updateDeck(newDeck);
-
+    this.props.resetScores();
+    debugger;
     this.props.openModal({
       modal: 'checkpoint',
       package: {

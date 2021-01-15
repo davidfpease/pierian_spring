@@ -4,19 +4,7 @@ class ProgressMeter extends React.Component {
 
   constructor(props){
     super(props);
-    // this.state = {
-    //   chevArray: Array.from({ length: 10 }, 
-    //     (item, index) => (<li key={`chev${index}`} className="chevron"></li>))
-    // }
   }
-
-  // componentDidUpdate(prevProps){
-  //   
-  //   if(this.props.progressBar !== prevProps.progressBar ){
-  //     
-  //   }
-  // }
-
   render(){
     
     
