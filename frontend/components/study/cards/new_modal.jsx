@@ -13,7 +13,8 @@ export default class NewModal extends Component {
       modal: 'checkpoint',
       package: {
         deckId: this.props.deckId,
-        mastery: this.props.mastery
+        mastery: this.props.mastery,
+        originalCards: this.props.cards,
       },
     });
 

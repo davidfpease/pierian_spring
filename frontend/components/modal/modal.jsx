@@ -28,7 +28,8 @@ function Modal({ modal, closeModal, decks }) {
       return(
         <div className="modal-background">
           <div className="modal-child" onClick={e => e.stopPropagation()}>
-            <Checkpoint mastery={modal.package.mastery} closeModal={closeModal}/>
+            <Checkpoint mastery={modal.package.mastery} closeModal={closeModal}
+                        originalCards={modal.package.originalCards}/>
           </div>
         </div>
       )

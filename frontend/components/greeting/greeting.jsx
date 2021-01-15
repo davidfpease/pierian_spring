@@ -56,7 +56,7 @@ const Greeting = (props) => {
   );
 
   const personalGreeting = () => {
-  // debugger
+  // 
   return (
     <hgroup className="header-group">
       <h2 className="header-name">Hi, {props.currentUser.first_name}!</h2>

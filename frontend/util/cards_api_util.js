@@ -24,7 +24,7 @@ export const createCard = (card, deck_id) => {
 }
 
 export const updateCard = (card) => {
-  // debugger
+  // 
   return $.ajax({
     method: 'PATCH',
     url: `/api/cards/${card.id}`,
@@ -33,7 +33,7 @@ export const updateCard = (card) => {
 };
 
 export const updateCards = (cards) => {
-  // debugger
+  // 
   return $.ajax({
     method: 'POST',
     url: `/api/bulk`,

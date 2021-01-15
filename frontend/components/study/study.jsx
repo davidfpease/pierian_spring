@@ -20,6 +20,9 @@ class Study extends React.Component {
 
   componentDidMount() {
     this.props.fetchAllCardsInDeck(this.props.match.params.deck_id);
+    this.setState({
+      mastery: this.props.decks[this.props.match.params.deck_id].mastery,
+    })
   }
 
   componentDidUpdate(prevProps){
@@ -34,7 +37,7 @@ class Study extends React.Component {
     //update current card
     let index = allCards.findIndex(c => c.id === card.id);
     allCards[index] = card;
-
+    
     //recalculate mastery
     let scores = {
       0: 0,
@@ -44,7 +47,6 @@ class Study extends React.Component {
       4: 0,
       5: 0
     }
-// the math here isn't working...
 
     allCards.forEach(card => scores[card.score]+= 1);
     let tallies = Object.keys(scores).map(key => (key * scores[key]));

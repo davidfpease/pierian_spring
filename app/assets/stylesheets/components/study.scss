@@ -289,3 +289,33 @@ transform: rotate(180deg);
 .chevron.score-5:after {
   background:#00a8d7;
 }
+
+
+
+.mastery-circle {
+  width: 30vh;
+  height: 30vh;
+}
+
+
+.svg-circles {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    transform: rotate(-90deg);
+}
+
+.svg-circle-bg {
+    fill: none;
+}
+
+.svg-circle {
+    fill: none;
+}
+.svg-circle-text {
+   font-size: 2rem;
+   transform: rotate(90deg);
+    text-anchor: middle;
+    fill: #fff;
+    font-weight: bold;
+}

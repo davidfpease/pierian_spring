@@ -3,7 +3,7 @@ class Api::CardsController < ApplicationController
   def index
     #retrieve all cards associated with the current deck
     deck_id = params[:deck_id]
-    # debugger
+    # 
     if deck_id
       @cards = Card.where("deck_id = ?", deck_id)
     else
@@ -13,7 +13,7 @@ class Api::CardsController < ApplicationController
   end
 
   def create
-    #debugger
+    #
     deck_id = params[:deck_id]
     @card = Card.new(card_params)
     @card.deck_id = deck_id
@@ -27,7 +27,7 @@ class Api::CardsController < ApplicationController
 
   def update
     @card = Card.find_by(id: params[:id])
-    # debugger
+    # 
     if @card.update(card_params)
       render :show
     else

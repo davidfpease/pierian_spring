@@ -37,6 +37,7 @@ class CardIndex extends React.Component {
       {
         score: e.currentTarget.id,
         index: i,
+        cardId: cardId,
       }
       )
       this.setState({
@@ -46,7 +47,8 @@ class CardIndex extends React.Component {
       
       card.last_view = new Date();
       card.number_views += 1;
-      card.score = Math.round((card.score + Number(e.currentTarget.id))/card.number_views);
+      card.score = Number(e.currentTarget.id);
+      
       this.props.calculateMasteryScore(this.originalCards, card);
       
   }

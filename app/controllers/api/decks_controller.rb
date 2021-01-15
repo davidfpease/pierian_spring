@@ -28,10 +28,10 @@ class Api::DecksController < ApplicationController
 
   def update
     @deck = Deck.find_by(id: params[:id])
-    # debugger
+    # 
     # params only include title and objective.... why???
     if @deck.update!(deck_params)
-      debugger
+      
       render :show
     else
       render json: @deck.errors.full_messages, status: :unprocessable_entity
