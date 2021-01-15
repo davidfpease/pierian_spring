@@ -9,7 +9,7 @@ export default function Checkpoint(props) {
 
   const studyMore = ()=>{
     props.closeModal;
-    window.location.reload();
+    //window.location.reload();
   }
 
   return (
@@ -33,11 +33,11 @@ export default function Checkpoint(props) {
               <span className="label">Back to Dashboard</span>
             </div>
           </Link>
-          
+          <Link to={`/study/${props.deckId}/reload`}>
             <div className="circle-pill-button" label="Study 10 more Cards" onClick={studyMore}>
               <span className="label">Study 10 more Cards</span>
             </div>
-          
+          </Link>
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import CardIndex from './cards/card_index';
 import StudySideBar from './study_sidebar_container';
-import { openModal } from '../../actions/modal_actions';
+import { openModal, closeModal } from '../../actions/modal_actions';
 import { fetchAllCardsInDeck, updateCard, updateCards } from '../../actions/card_actions';
 import { updateDeck } from '../../actions/deck_actions';
 import { addScore, resetScores } from '../../actions/progressBar_actions';
@@ -20,9 +20,13 @@ class Study extends React.Component {
 
   componentDidMount() {
     this.props.fetchAllCardsInDeck(this.props.match.params.deck_id);
-    this.setState({
-      mastery: this.props.decks[this.props.match.params.deck_id].mastery,
-    })
+    this.props.closeModal();
+    debugger;
+    if (Object.keys(this.props.decks).length > 0){
+      this.setState({
+        mastery: this.props.decks[this.props.match.params.deck_id].mastery,
+      })
+    }
   }
 
   componentDidUpdate(prevProps){
@@ -107,6 +111,7 @@ const mdtp = dispatch => {
     updateCards: (cards) => dispatch(updateCards(cards)),
     fetchAllCardsInDeck: (deckId) => dispatch(fetchAllCardsInDeck(deckId)),
     openModal: (modal) => dispatch(openModal(modal)),
+    closeModal: () => dispatch(closeModal()),
     updateDeck: (deck) => dispatch(updateDeck(deck)),
     resetScores: () => dispatch(resetScores()),
   }

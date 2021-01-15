@@ -12,8 +12,6 @@ import GreetingContainer from "./greeting/greeting_container";
 import DashboardContainer from './dashboard/dashboard_container';
 import Study from './study/study';
 import EditCardsFormContainer from './edit_cards/edit_cards_container';
-import SignupFormContainer from './session_form/signup_form_container';
-import LoginFormContainer from './session_form/login_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
@@ -21,16 +19,11 @@ const App = () => (
     <Modal />
     <GreetingContainer />
     <Switch>
-      <ProtectedRoute path="/dashboard" component={DashboardContainer}/>
-      <Route path="/study/:deck_id" component={Study} />
+      <ProtectedRoute exact path="/dashboard" component={DashboardContainer}/>
+      <ProtectedRoute exact path="/study/:deck_id" component={Study} />
+      <Redirect exact from="/study/:deck_id/reload" to="/study/:deck_id" />
       <Route path="/profile" render={() => <div>hi</div>}/>
       <ProtectedRoute path="/decks/:deck_id/cards" component={EditCardsFormContainer}/>
-      
-
-      {/*
-      <AuthRoute path="/login" component={LoginFormContainer} />
-      <AuthRoute path="/signup" component={SignupFormContainer} />
-      */}
     </Switch>
   </div>
 );
