@@ -106,7 +106,7 @@ class DeckItem extends React.Component {
                   </Link>
                 </div>
               ):(
-                <Link to={`/decks/${deck.id}/cards`}>
+                  <Link to={`/decks/${deck.id}/cards`} className="pill-button-add-cards">
                   <button className="pill-button add-cards">Add Cards</button>
                 </Link>
               )}
