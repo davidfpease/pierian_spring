@@ -1,0 +1,63 @@
+.tab-switcher {
+  border-bottom: 1px solid hsla(0,0%,100%,.4);
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.tab-item-thisRound, .tab-item-overall {
+  border-bottom: 3px solid transparent;
+  color: hsla(0,0%,100%,.3);
+  cursor: pointer;
+  flex: 1;
+  font-size: 13px;
+  font-weight: 400;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 6px;
+}
+
+.tab-item-thisRound:hover{
+  color: #28a5dc;
+}
+
+.tab-item-overall:hover{
+  color: #28a5dc;
+}
+
+.tab-item-overall.is-selected, .tab-item-thisRound.is-selected {
+  border-bottom: 3px solid hsla(0,0%,100%,.4);
+  color: hsla(0,0%,100%,.45);
+  font-weight: 600;
+}
+
+.study-sidebar-header {
+  align-items: flex-start;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.sidebar-sections {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 12px 0 0;
+  min-height: 0;
+}
+
+.first-row {
+  align-items: flex-start;
+  display: flex;
+}
+
+.second-row {
+  margin-top: 12px;
+  width: 100%;
+
+}

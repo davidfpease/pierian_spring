@@ -1,16 +1,15 @@
 .study-sidebar {
-  height: 100vh;
-  width: 340px;
-  min-width: 340px;
-  z-index: 2;
-  top: 0;
-  left: 0;
-  background-color: #324054;
-  overflow-x: hidden;
-  padding-top: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+background-color: #243043;
+box-sizing: border-box;
+display: flex;
+flex-direction: column;
+height: 100vh;
+max-height: 100vh;
+min-height: 660px;
+min-width: 200px;
+padding: 30px 30px 24px;
+width: 340px;
+z-index: 1000;
 }
 
 .study {
@@ -153,21 +152,15 @@
   color: transparent;
 }
 
-// .chevron {
-//   width: 100%;
-//   max-width: 140px;
-//   min-width:  100px;
-// }
 
 //THE CHEVRON CSS IS FROM https://css-tricks.com/the-shapes-of-css/#chevron-shape-via-anthony-ticknor
 .chevron {
-position: relative;
-text-align: center;
-padding: 12px;
-margin-bottom: 11px;
-height: 8px;
-width: 60%;
-transform: rotate(180deg);
+  text-align: center;
+  padding: 12px;
+  margin-bottom: 11px;
+  height: 8px;
+  width: 120px;
+  transform: rotate(180deg);
 }
 .chevron:before {
   content: '';
@@ -191,20 +184,21 @@ transform: rotate(180deg);
 }
 
 .chevron-ul {
-  display: flex;
-  flex-direction: column-reverse;
   align-items: center;
-  width: 60%;
-  height: 100vh;
-  box-sizing: border-box;
-  flex: 1;
-  max-width: 175px;
+  display: flex;
+  height: 100%;
+  flex-direction: column-reverse;
+  justify-content: space-evenly;
+  margin: 24px 0;
+  min-height: 220px;
 }
 .chevron-container {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+    display: flex;
+    flex: 1;
+    min-height: 0;
+    box-sizing: border-box;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .deck-label {

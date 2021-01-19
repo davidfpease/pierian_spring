@@ -3,7 +3,7 @@ import React from "react";
 const DeckInfo = (props) => {
 
   return (
-    <div>
+    <div className="first-row">
       deck info component
     </div>
   )

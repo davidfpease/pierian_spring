@@ -32,6 +32,7 @@ class StudySideBar extends React.Component {
     
     return (
       <div className="study-sidebar">
+        <header className="study-sidebar-header">
         <DeckInfo deck={this.props.deck}/>
         <div class="second-row">
           { this.state.display === "this round" ?(
@@ -44,7 +45,7 @@ class StudySideBar extends React.Component {
               </li>
             </ul>
           ) : (
-            <ul class="tab-switcher">
+            <ul class="tab-switcher" onClick={this.handleTabClick}>
               <li class="tab-item-thisRound">
                 <div class="tab-label">This Round</div>
               </li>
@@ -54,21 +55,18 @@ class StudySideBar extends React.Component {
             </ul>
           )}
         </div>
+        </header>
 
 
 
 
-
-        {this.state.display === "this round" ? (   
-          <div className="sidebar-sections">
-            <ProgressMeter progressBar={this.props.progressBar}/>
-          </div>
-        ) : (
-          <div className="sidebar-sections">
-            <h1>{this.props.mastery}% Mastery</h1>
-            <ConfidenceChart progressBar={this.props.progressBar} />
-          </div>
-        )}
+        <div className="sidebar-sections">
+          {this.state.display === "this round" ? (   
+              <ProgressMeter progressBar={this.props.progressBar}/>
+          ) : (
+              <ConfidenceChart progressBar={this.props.progressBar} />
+          )}
+        </div>
       </div>
     )
   }
