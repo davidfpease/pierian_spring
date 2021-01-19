@@ -64,7 +64,10 @@ class StudySideBar extends React.Component {
           {this.state.display === "this round" ? (   
               <ProgressMeter progressBar={this.props.progressBar}/>
           ) : (
-              <ConfidenceChart progressBar={this.props.progressBar} />
+              <ConfidenceChart deck={this.props.deck} 
+                               cards={this.props.cards} 
+                               progressBar={this.props.progressBar}
+                               mastery={this.props.mastery} />
           )}
         </div>
       </div>
