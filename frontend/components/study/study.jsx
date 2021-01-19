@@ -73,7 +73,7 @@ class Study extends React.Component {
     return (
       <div className="study">
         
-        <StudySideBar mastery={this.state.mastery}/>   
+        <StudySideBar mastery={this.state.mastery} deck={this.props.deck}/>   
         
         <CardIndex calculateMasteryScore={this.calculateMasteryScore} 
           deckId={deckId}
