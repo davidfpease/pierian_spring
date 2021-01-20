@@ -127,7 +127,7 @@ class DeckItem extends React.Component {
                           <div className="drop-down-text">Edit Deck</div>
                     </li>
                     <li className="dropdown-option"
-                        onClick={() => deleteDeck(deck.id)}>
+                        onClick={() => this.props.deleteDeck(deck.id)}>
                           <div><IoMdClose /></div>
                           <div className="drop-down-text">Delete Deck</div>
                     </li>
