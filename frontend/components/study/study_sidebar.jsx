@@ -24,8 +24,6 @@ class StudySideBar extends React.Component {
         display: "overall",
       })
     }
-    ;
-
   }
 
   render() {
