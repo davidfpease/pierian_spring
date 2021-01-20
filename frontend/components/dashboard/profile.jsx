@@ -3,8 +3,6 @@ import { ReactReduxContext } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 import { BsFillGearFill, BsPerson, BsToggles, BsBoxArrowRight } from 'react-icons/bs';
 import { CgProfile } from 'react-icons/cg';
-import { VscTriangleUp } from 'react-icons/vsc';
-
 const UserStats = (props) => {
   //
   return (

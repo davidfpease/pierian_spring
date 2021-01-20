@@ -22,7 +22,7 @@ const App = () => (
       <ProtectedRoute exact path="/dashboard" component={DashboardContainer}/>
       <ProtectedRoute exact path="/study/:deck_id" component={Study} />
       <Redirect exact from="/study/:deck_id/reload" to="/study/:deck_id" />
-      <Route path="/profile" render={() => <div>hi</div>}/>
+      <Route path="/profile" render={() => <div>Profile Content Here</div>}/>
       <ProtectedRoute path="/decks/:deck_id/cards" component={EditCardsFormContainer}/>
     </Switch>
   </div>
