@@ -61,3 +61,129 @@
   width: 100%;
 
 }
+
+.confidence-ratings {
+  color: white;
+  font-size: 14px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin: 5vh 0 2vh;
+  box-sizing: border-box;
+}
+
+.confidence-ratings-heading{
+  color: #ddd;
+  font-size: 15px;
+  font-weight: 100;
+  margin: 0 0 12px;
+  text-align: center;
+  line-height: 1.1;
+}
+
+.confidence-ratings-bars {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  font-size: 14px;
+  justify-content: space-between;
+  max-height: 400px;
+}
+
+li.confidence-ratings-bar {
+  padding-bottom: 4px;
+  align-items: center;
+  display: flex;
+  box-sizing: border-box;
+}
+
+.level-label {
+  font-size: 12px;
+  font-weight: 100;
+  text-align: right;
+  width: 40px;
+  box-sizing: border-box;
+  display: block;
+}
+
+.base-bar {
+    height: 24px;
+    margin: 0 12px;
+    position: relative;
+    width: 200px;
+    box-sizing: border-box;
+    background-color: hsla(0,0%,100%,.18);
+}
+
+.count-bar {
+    height: 24px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    box-sizing: border-box;
+}
+
+.count-bar.level0 {
+  background-color: #1e2633;
+}
+.count-bar.level1 {
+  background-color: #aa0080;
+}
+.count-bar.level2 {
+  background-color: #ff8a47;
+}
+.count-bar.level3 {
+  background-color: #fd0;
+}
+.count-bar.level4 {
+  background-color: #7fae2e;
+}
+.count-bar.level5 {
+  background-color: #00a8d7;
+}
+
+.level-count {
+    text-align: left;
+    width: 40px;
+    box-sizing: border-box;
+    color: #fff;
+}
+
+.value-label.sidebar {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 15px;
+  font-weight: 100;
+  margin-top: 5px;
+  text-transform: uppercase;
+}
+
+.value-data.sidebar {
+  font-size: 37px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+.sidebar-mastery-value {
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  position: absolute;
+  top: 63px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 64px;
+  width: 80px;
+}
+
+.sidebar-mastery-circle {
+  height: 186px;
+  width: 186px;
+  align-items: center;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  position: relative;
+}

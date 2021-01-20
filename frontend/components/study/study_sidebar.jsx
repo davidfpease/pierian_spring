@@ -24,7 +24,7 @@ class StudySideBar extends React.Component {
         display: "overall",
       })
     }
-    debugger;
+    ;
 
   }
 
@@ -67,7 +67,8 @@ class StudySideBar extends React.Component {
               <ConfidenceChart deck={this.props.deck} 
                                cards={this.props.cards} 
                                progressBar={this.props.progressBar}
-                               mastery={this.props.mastery} />
+                               mastery={this.props.mastery} 
+                               scores ={this.props.scores}/>
           )}
         </div>
       </div>

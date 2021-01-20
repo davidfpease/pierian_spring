@@ -1,63 +1,84 @@
 import React, { Component } from 'react';
-import CircleProgress from './circle_progress';
+import CircleProgressSideBar from './circle_progress_sidebar';
+import _ from 'lodash';
+
 
 export default class ConfidenceChart extends Component {
 
   constructor(props){
     super(props);
+    // this.state ={
+    //   scores: {
+    //     0: 0,
+    //     1: 0,
+    //     2: 0,
+    //     3: 0,
+    //     4: 0,
+    //     5: 0,
+    //   }
+    // }
 
+    this.total_cards = props.cards.length;
   }
 
-  render() {
 
+  render() {
     //calculate percents for widths on each bar
+    let percents = [];
+    [0,1,2,3,4,5].forEach(key =>{
+      percents.push((this.props.scores[key]/this.total_cards)*100)
+    });
+    debugger;
+
+
     return (
       <div>
-        <CircleProgress mastery={this.props.mastery} originalCards={this.props.cards}/>
+        <CircleProgressSideBar mastery={this.props.mastery} scores={this.props.scores}
+          totalCards={this.total_cards}/>
         <div className="confidence-ratings">
-          <h4 class="confidence-ratings-heading">Confidence Ratings</h4>
-          <ul class="confidence-ratings-bars">
-            <li class="confidence-ratings-bar level-0">
-              <div class="level-label">New</div>
-              <div class="base-bar">
-                <div class="count-bar" title="0 unrated cards" style="width: 0%;"></div>
+          <h4 className="confidence-ratings-heading">Confidence Ratings</h4>
+          <ul className="confidence-ratings-bars">
+            <li className="confidence-ratings-bar level-0">
+              <div className="level-label">New</div>
+              <div className="base-bar">
+                <div className="count-bar level0" style={{width: `${percents[0]}%`}}></div>
               </div>
-              <div class="level-count">0</div>
+              <div className="level-count">{this.props.scores[0]}</div>
             </li>
-            <li class="confidence-ratings-bar level-1">
-              <div class="level-label">1</div>
-              <div class="base-bar">
-                <div class="count-bar" title="4 cards rated as 1" style="width: 33.3333%;"></div>
+            <li className="confidence-ratings-bar level-1">
+              <div className="level-label">1</div>
+              <div className="base-bar">
+                <div className="count-bar level1" style={{ width: `${percents[1]}%` }}></div>
               </div>
-              <div class="level-count">4</div>
+              <div className="level-count">{this.props.scores[1]}</div>
             </li>
-            <li class="confidence-ratings-bar level-2">
-              <div class="level-label">2</div>
-              <div class="base-bar">
-                <div class="count-bar" title="0 cards rated as 2" style="width: 0%;"></div>
+            <li className="confidence-ratings-bar level-2">
+              <div className="level-label">2</div>
+              <div className="base-bar">
+                <div className="count-bar level2" style={{ width: `${percents[2]}%` }}></div>
               </div>
-              <div class="level-count">0</div>
+              <div className="level-count">{this.props.scores[2]}</div>
             </li>
-            <li class="confidence-ratings-bar level-3">
-              <div class="level-label">3</div>
-              <div class="base-bar">
-                <div class="count-bar" title="0 cards rated as 3" style="width: 0%;"></div>
+            <li className="confidence-ratings-bar level-3">
+              <div className="level-label">3</div>
+              <div className="base-bar">
+                <div className="count-bar level3" style={{ width: `${percents[3]}%` }}></div>
               </div>
-              <div class="level-count">0</div>
+              <div className="level-count">{this.props.scores[3]}</div>
             </li>
-            <li class="confidence-ratings-bar level-4">
-              <div class="level-label">4</div>
-              <div class="base-bar">
-                <div class="count-bar" title="0 cards rated as 4" style="width: 0%;"></div>
+            <li className="confidence-ratings-bar level-4">
+              <div className="level-label">4</div>
+              <div className="base-bar">
+                <div className="count-bar level4" style={{ width: `${percents[4]}%` }}></div>
               </div>
-              <div class="level-count">0</div>
+              <div className="level-count">{this.props.scores[4]}</div>
             </li>
-            <li class="confidence-ratings-bar level-5">
-              <div class="level-label">5</div>
-              <div class="base-bar">
-                <div class="count-bar" title="8 cards rated as 5" style="width: 66.6667%;"></div>
+            <li className="confidence-ratings-bar level-5">
+              <div className="level-label">5</div>
+              <div className="base-bar">
+                <div className="count-bar level5" style={{ width: `${percents[5]}%` }}></div>
               </div>
-              <div class="level-count">8</div>
+              <div className="level-count">{this.props.scores[5]}</div>
             </li>
           </ul>
 

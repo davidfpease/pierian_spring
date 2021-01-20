@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 
 
-class CircleProgress extends Component {
+class CircleProgressSideBar extends Component {
   constructor(props){
     super(props);
   }
@@ -11,23 +11,9 @@ class CircleProgress extends Component {
 
 
   render() {
-    let scores = {
-      0: 0,
-      1: 0,
-      2: 0,
-      3: 0,
-      4: 0,
-      5: 0
-    }
-    this.props.originalCards.forEach(card => scores[card.score] += 1);
-    let totalCards = this.props.originalCards.length;
-    //let tallies = Object.keys(scores).map(key => (key * scores[key]));
-    //percents can't be based on how many times a score shows up.... the circle is total mastery... 
-    // each color is a percent of the total mastery... 
 
-
-    let percents = Object.keys(scores).map(key =>{
-      return ((scores[key]/totalCards));
+    let percents = Object.keys(this.props.scores).map(key =>{
+      return ((this.props.scores[key]/this.props.totalCards));
     })
     
     ;
@@ -52,10 +38,10 @@ class CircleProgress extends Component {
 
     return (
       <div>
-        <div className="mastery-circle">
-          <div className="mastery-value">
-            <div className="value-data">{this.props.mastery}%</div>
-            <div className="value-label">Mastery</div>
+        <div className="sidebar-mastery-circle">
+          <div className="sidebar-mastery-value">
+            <div className="value-data sidebar">{this.props.mastery}%</div>
+            <div className="value-label sidebar">Mastery</div>
           </div>
           <svg className="svg-circles" viewBox="0 0 500 500" width="100%" height="100%">
             <circle
@@ -126,11 +112,4 @@ class CircleProgress extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  //
-  return {
-    progress: state.entities.progressBar,
-  };
-};
-
-export default connect(mapStateToProps, null)(CircleProgress);
+export default CircleProgressSideBar;

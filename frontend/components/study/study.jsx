@@ -14,19 +14,29 @@ class Study extends React.Component {
     super(props);
     this.state = {
       mastery: 0,
+      scores: {
+        0: 0,
+        1: 0,
+        2: 0,
+        3: 0,
+        4: 0,
+        5: 0
+      }
     }
+
     this.calculateMasteryScore = this.calculateMasteryScore.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchAllCardsInDeck(this.props.match.params.deck_id);
     this.props.closeModal();
-    debugger;
+    
     if (Object.keys(this.props.decks).length > 0){
       this.setState({
         mastery: this.props.decks[this.props.match.params.deck_id].mastery,
       })
     }
+    this.calculateMasteryScore(this.props.cards, null);
   }
 
   componentDidUpdate(prevProps){
@@ -39,8 +49,10 @@ class Study extends React.Component {
 
   calculateMasteryScore(allCards, card){    
     //update current card
-    let index = allCards.findIndex(c => c.id === card.id);
-    allCards[index] = card;
+    if(card){
+      let index = allCards.findIndex(c => c.id === card.id);
+      allCards[index] = card;
+    }
     
     //recalculate mastery
     let scores = {
@@ -61,9 +73,8 @@ class Study extends React.Component {
     mastery = Math.round(mastery*1000) / 10;
     this.setState({
       mastery: mastery,
+      scores: scores
     })
-
-
   }
 
 
@@ -74,7 +85,7 @@ class Study extends React.Component {
       <div className="study">
         
         <StudySideBar mastery={this.state.mastery} deck={this.props.deck}
-                      cards={this.props.cards}/>   
+                      cards={this.props.cards} scores={this.state.scores}/>   
         
         <CardIndex calculateMasteryScore={this.calculateMasteryScore} 
           deckId={deckId}
