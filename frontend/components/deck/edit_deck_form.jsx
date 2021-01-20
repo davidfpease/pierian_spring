@@ -37,30 +37,31 @@ class EditDeckForm extends React.Component {
     // 
     return (
       <div className="edit-deck-form-container">
+        <div class="new-modal-title">Edit Deck</div>
         <form onSubmit={this.handleSubmit}>
           <div onClick={()=>this.props.closeModal()} className="close-x">
             <img src={window.close_x} />
 
           </div> 
-          <label className="input-descriptor">Title
-            <input className="login-input" type="text" 
+          <label className="input-descriptor"><span className="form-label">Title</span>
+            <input className="edit-deck-form-input" type="text" 
             value={this.state.title}
             onChange={this.update('title')}
             ></input>
           </label>
           
-          <label>Objective
-            <textarea className="input-descriptor"
-              className="login-input"
+          <label className="input-descriptor"><span className="form-label">Objective</span>
+            <textarea 
+              className="edit-deck-form-input"
               value={this.state.objective}
               onChange={this.update('objective')}
             ></textarea>
           </label>
           
-          <div>
+          <div className="edit-form-modal-buttons">
 
-            <button onClick={()=>this.props.closeModal()}>Cancel</button>
-            <button type="submit">Save</button>
+            <div className="pill-button-edit-deck-info-modal cancel" onClick={()=>this.props.closeModal()}>Cancel</div>
+            <div onClick={this.handleSubmit} className="pill-button-edit-deck-info-modal">Save</div>
           </div>
 
         </form>
