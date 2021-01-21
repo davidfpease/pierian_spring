@@ -8,7 +8,6 @@ import { fetchAllCards } from '../../actions/card_actions';
 import { logout } from '../../actions/session_actions';
 
 const mstp = (state, ownProps) => {
-  //console.log(ownProps);
   return {
     decks: state.entities.decks
   }

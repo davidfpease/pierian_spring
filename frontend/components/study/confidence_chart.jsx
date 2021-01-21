@@ -28,7 +28,7 @@ export default class ConfidenceChart extends Component {
     [0,1,2,3,4,5].forEach(key =>{
       percents.push((this.props.scores[key]/this.total_cards)*100)
     });
-    debugger;
+    
 
 
     return (

@@ -19,7 +19,7 @@ class DeckInfo extends React.Component {
   }
 
   render(){
-    debugger;
+    
     let deck = {
       title: "",
     };

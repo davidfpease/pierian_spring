@@ -28,18 +28,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //TESTING
   
-  window.login = thunkActions.login;
-  window.signup = APIUtil.signup;
-  window.logout = thunkActions.logout;
-  window.fetchAllCards = CardUtil.fetchAllCards;
-  window.fetchAllDecks = DeckActions.fetchAllDecks;
+  // window.login = thunkActions.login;
+  // window.signup = APIUtil.signup;
+  // window.logout = thunkActions.logout;
+  // window.fetchAllCards = CardUtil.fetchAllCards;
+  // window.fetchAllDecks = DeckActions.fetchAllDecks;
 
-  window.updateDeck = DeckActions.updateDeck;
-  window.deleteDeck = DeckActions.deleteDeck;
-  window.createDeck = DeckActions.createDeck;
+  // window.updateDeck = DeckActions.updateDeck;
+  // window.deleteDeck = DeckActions.deleteDeck;
+  // window.createDeck = DeckActions.createDeck;
 
 
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
+  // window.getState = store.getState;
+  // window.dispatch = store.dispatch;
 
 });
