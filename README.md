@@ -6,7 +6,7 @@
 
 [Pierian Spring](https://pierian-spring.herokuapp.com/#/) is a work-in-progress clone of the learning app [Brainscape](https://www.brainscape.com) using Rails backend with React/Redux on the frontend, a PostGreSQL database and hosted on Heroku.  Pierian Spring allows users to register and login to the site where they can build digital decks of flashcards consisting of questions and answers.  Decks can be studied by presenting cards to the user and recording feedback about the user's confidence in their retention of the answer to each question.
 
-### Core features of Pieriann Spring:
+### Core features of Pierian Spring:
    - Front and backend user authentication
    - Create and edit decks and cards
    - Study decks (cards are presented to user as question first, then answer, then rating of retention)
@@ -22,7 +22,7 @@ The edit deck form provided multiple challenges to overcome, including:
 -   Reset option to remove all pending changes
 -   Save options to commit changes to the database
 
-I built the edit deck form using a connected React component with access to the global redux state which provides the initial values for each pre-populated edit field.  The form itself maintains an internal state tracking user modifications.  These modifications are held within the component's state until the user clicks the save button, at which point the changes are passed to the Redux store and the user is redirected to their Deck Index page.  Code snippet below:
+I built the edit deck form using a connected React component which provides the initial values for each pre-populated edit field.  The form itself maintains an internal state tracking user modifications.  These modifications are held within the component's state until the user clicks the save button, at which point the changes are passed to the Redux store and the user is redirected to their Deck Index page.  Code snippet below:
 
 ```js
 lass EditCardsForm extends React.Component {
@@ -108,10 +108,13 @@ lass EditCardsForm extends React.Component {
 
 ```
 
+<img src="https://media.giphy.com/media/AsUfHkl1cdOWEo0K2h/giphy.gif" width="500">
+
+
 ### Work Remaining
 - Finalize the study feature by improving the UI and building the processes necessary to track a user's responses and frequency of exposure to each card
+- Add "Classes" as an additional layer to organize decks
 - Search feature to find other available decks
 - Edit each card individually
-- Create new Decks
 - Overall styling and UI
 
