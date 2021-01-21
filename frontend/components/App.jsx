@@ -13,17 +13,22 @@ import DashboardContainer from './dashboard/dashboard_container';
 import Study from './study/study';
 import EditCardsFormContainer from './edit_cards/edit_cards_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import NoMatch from '../util/no_match.jsx';
 
 const App = () => (
   <div>
     <Modal />
-    <GreetingContainer />
+    
     <Switch>
+      <AuthRoute exact path="/" component={ GreetingContainer }/>
+      <AuthRoute exact path="/login" component={ GreetingContainer }/>
+      <AuthRoute exact path="/signup" component={ GreetingContainer }/>
       <ProtectedRoute exact path="/dashboard" component={DashboardContainer}/>
       <ProtectedRoute exact path="/study/:deck_id" component={Study} />
       <Redirect exact from="/study/:deck_id/reload" to="/study/:deck_id" />
-      <Route path="/profile" render={() => <div>Profile Content Here</div>}/>
+      <ProtectedRoute path="/profile" render={() => <div>Profile Content Here</div>}/>
       <ProtectedRoute path="/decks/:deck_id/cards" component={EditCardsFormContainer}/>
+      <Route path="*" component={ NoMatch }/>
     </Switch>
   </div>
 );

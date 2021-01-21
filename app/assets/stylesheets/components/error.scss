@@ -1,0 +1,21 @@
+
+
+.f404-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: auto;
+    background-color: #28a5dc;
+    color: white;
+    width: 295px;
+    border-radius: 25px;
+    padding: 20px;
+    height: 100px;
+}
+
+.error {
+  display: flex;
+  height: 100vh;
+}
+
