@@ -1,7 +1,7 @@
 import React from 'react';
 
 const NoMatch = (props) => {
-  debugger;
+  
   return (
     <div className="error">
       <div className="f404-container">
