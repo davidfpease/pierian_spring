@@ -108,6 +108,9 @@ lass EditCardsForm extends React.Component {
 
 ```
 
+<img src="https://media.giphy.com/media/AsUfHkl1cdOWEo0K2h/giphy.gif" width="300">
+
+
 ### Work Remaining
 - Finalize the study feature by improving the UI and building the processes necessary to track a user's responses and frequency of exposure to each card
 - Add "Classes" as an additional layer to organize decks
