@@ -108,7 +108,7 @@ lass EditCardsForm extends React.Component {
 
 ```
 
-<img src="https://media.giphy.com/media/AsUfHkl1cdOWEo0K2h/giphy.gif" width="300">
+<img src="https://media.giphy.com/media/AsUfHkl1cdOWEo0K2h/giphy.gif" width="500">
 
 
 ### Work Remaining
