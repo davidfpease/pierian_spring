@@ -57,8 +57,8 @@ class EditCardsForm extends React.Component {
 
   addNewCard(){
     let newCards = this.state.cards;
-    newCards.push({question: "Question",
-                    answer: "Answer",
+    newCards.push({question: "",
+                    answer: "",
                     deck_id: this.props.deck.id});
     this.setState({cards: newCards});
     //
@@ -73,8 +73,8 @@ class EditCardsForm extends React.Component {
     if (cardsCopy.length === 0) {
       this.setState({
         cards: [{
-          question: "Question",
-          answer: "Answer",
+          question: "",
+          answer: "",
           deck_id: this.props.deck.id
         }],
         deleteCards: [],
@@ -185,12 +185,16 @@ class EditCardsForm extends React.Component {
                         </div>
                       </td>
                       <td className='table-td'>
-                        <textarea onChange={this.update('question', index)} value={card.question}></textarea>
+                        <textarea placeholder={card.question.length>0 ? null : "Question"}
+                          onChange={this.update('question', index)} 
+                          value={card.question.length>0 ? card.question : null}></textarea>
                         
                       </td>
                       <td className="filler-cell"></td>
                       <td className='table-td'>
-                        <textarea onChange={this.update('answer', index)} value={card.answer}></textarea>
+                        <textarea onChange={this.update('answer', index)}
+                          placeholder={card.answer.length > 0 ? null : "Answer"} 
+                          value={card.answer.length>0 ? card.answer : null}></textarea>
                       </td>
                       <td>
                         <div onClick={() => this.tempDeleteCard(index)} className="edit-deck-form-close"><FaWindowClose /></div>
