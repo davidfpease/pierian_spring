@@ -16,7 +16,13 @@ class DeckIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchAllDecks();
+    //this.props.fetchAllDecks();
+  }
+
+  componentDidUpdate(prevProps){
+    if(prevProps.decks.length !== this.props.decks.length){
+      this.props.fetchAllDecks();
+    }
   }
 
   handleTabClick(e){
@@ -27,8 +33,11 @@ class DeckIndex extends React.Component {
   }
 
   render(){
-    const { decks } = this.props;
+    
     const currentTab = this.state.tabSelected;
+    const currentUser = this.props.currentUser;
+    let { decks } = this.props;
+    decks = decks.filter(deck => deck.creator_id === currentUser.id);
 
     let deckDisplay;
     if (decks.length === 0){
@@ -41,18 +50,19 @@ class DeckIndex extends React.Component {
       <ul className="deck-list">
         {
           decks.map(deck => {
-            //
-            return (
-              <DeckItem
-              key={`deck${deck.id}`}
-              deck={deck}
-              cards={this.props.cards}
-              editDeck={this.props.updateDeck}
-              deleteDeck={this.props.deleteDeck}
-              openModal={this.props.openModal}
-              closeModal={this.props.closeModal}
-              />
-              )
+            if (deck.creator_id === currentUser.id){
+              return (
+                <DeckItem
+                key={`deck${deck.id}`}
+                deck={deck}
+                cards={this.props.cards}
+                editDeck={this.props.updateDeck}
+                deleteDeck={this.props.deleteDeck}
+                openModal={this.props.openModal}
+                closeModal={this.props.closeModal}
+                />
+                )
+            }
             })
           }
           <AddDeck openModal={this.props.openModal} createDeck={this.props.createDeck}/>

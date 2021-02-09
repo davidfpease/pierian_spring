@@ -23,9 +23,11 @@ export default class CreateDeckForm extends Component {
     const newDeck = {
       title: this.state.deckTitle,
       objective: "",
+      creator_id: this.props.currentUserId,
     }
     this.props.processForm(newDeck);
     this.props.closeModal();
+    //this.props.fetchAllDecks();
   }
 
   render() {
@@ -40,7 +42,7 @@ export default class CreateDeckForm extends Component {
           <div className="new-modal-content">
             <div className="new-modal-title">Create New Deck</div>
             <div className="new-modal-guidance">A Deck is a subset of Flashcards in a Class, similar to chapters in a book</div>
-            <form className="create-deck-form">
+            <form className="create-deck-form" onSubmit={this.handleSubmit}>
               <div className="text-field new-deck-name">
                 <div className="input-and-buttons">
                   <input onChange={this.update('deckTitle')} className="text-input" id="new-deck-name"

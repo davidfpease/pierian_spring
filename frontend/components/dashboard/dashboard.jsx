@@ -14,7 +14,7 @@ class Dashboard extends React.Component {
   render(){
     return (
       <div className="dashboard">
-        <DashboardSidebar />
+        <DashboardSidebar decks={this.props.decks}/>
         <DeckIndexContainer />
       </div>
     )

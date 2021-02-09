@@ -9,7 +9,7 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import modal from '../modal/modal';
 
-const mstp = (state, ownProps) => {
+const mstp = (state) => {
   // 
   return {
     decks: Object.keys(state.entities.decks).map(key=> state.entities.decks[key]),
