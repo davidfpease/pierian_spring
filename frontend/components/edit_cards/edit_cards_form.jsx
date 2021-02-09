@@ -42,7 +42,7 @@ class EditCardsForm extends React.Component {
 
   tempDeleteCard(cardNum) {
     let newCards = this.state.cards.slice();
-    // 
+    debugger;
     let existingDeleted = this.state.deletedCards.slice();
     let deletedCard = newCards[cardNum];
     // 
@@ -57,6 +57,7 @@ class EditCardsForm extends React.Component {
 
   addNewCard(){
     let newCards = this.state.cards;
+    debugger;
     newCards.push({question: "",
                     answer: "",
                     deck_id: this.props.deck.id});
@@ -69,7 +70,7 @@ class EditCardsForm extends React.Component {
     let cardsArray = Object.keys(this.props.cards).map(key => this.props.cards[key]);
     let cards = cardsArray.filter(card => card.deck_id === this.props.deck.id);
     let cardsCopy = _.cloneDeep(cards);
-    
+    debugger;
     if (cardsCopy.length === 0) {
       this.setState({
         cards: [{
@@ -125,7 +126,7 @@ class EditCardsForm extends React.Component {
   render(){
     
     const deck = this.props.deck || {title: ""};
-    // 
+    debugger;
     return(
       <div>
         <div className="nav-bar">
@@ -187,14 +188,14 @@ class EditCardsForm extends React.Component {
                       <td className='table-td'>
                         <textarea placeholder={card.question.length>0 ? null : "Question"}
                           onChange={this.update('question', index)} 
-                          value={card.question.length>0 ? card.question : null}></textarea>
+                          value={card.question.length>0 ? card.question : "" }></textarea>
                         
                       </td>
                       <td className="filler-cell"></td>
                       <td className='table-td'>
                         <textarea onChange={this.update('answer', index)}
                           placeholder={card.answer.length > 0 ? null : "Answer"} 
-                          value={card.answer.length>0 ? card.answer : null}></textarea>
+                          value={card.answer.length>0 ? card.answer : "" }></textarea>
                       </td>
                       <td>
                         <div onClick={() => this.tempDeleteCard(index)} className="edit-deck-form-close"><FaWindowClose /></div>
