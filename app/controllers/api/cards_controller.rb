@@ -26,7 +26,26 @@ class Api::CardsController < ApplicationController
   end
 
   def copy
-    debugger
+    @cards = []
+    cards_params = params[:cards]
+    cards_params.permit!
+    # cards_hash = cards_params.to_hash()
+
+    cards_params.each do |key, val|
+      card = Card.new(val)
+      card.save!
+      @cards << card 
+    end 
+
+    render :index
+
+    
+    # if Card.create!(@cards)
+    #   debugger
+    #   render :index
+    # else
+    #   render json: @cards.errors.full_messages
+    # end   
   end
 
   def update

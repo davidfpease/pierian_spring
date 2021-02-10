@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import _ from 'lodash';
 import { connect } from 'react-redux';
-import { createDeck } from '../../util/decks_api_util';
+import { createDeck } from '../../actions/deck_actions';
+import { copyCards } from '../../actions/card_actions';
 
 
 class OtherDeck extends Component {
@@ -11,11 +13,11 @@ class OtherDeck extends Component {
   }
 
   handleSubmit(cards){
-    debugger;
     //create a new deck, then
     // clear card data and add deck id
     // call copy cards api util
     let objective = this.props.objective || "";
+    let newCards = _.cloneDeep(cards);
 
     let newDeck = {
       title: this.props.deck.title,
@@ -23,13 +25,21 @@ class OtherDeck extends Component {
       mastery: 0,
     }
 
-    this.props.createDeck(newDeck).then((res)=>{
-      let test = 0;
-      debugger;
+    this.props.createDeck(newDeck).then(res =>{
+      
+      let deckId = res.deck.id;
+      newCards.forEach(card => {
+        delete card.id;
+        card.deck_id = deckId;
+        card.last_view = 0;
+        card.number_views = 0;
+        card.score = 0;
+      });
+      this.props.copyCards(newCards).then(resp => {
+        debugger;
+      });
+      
     })
-
-
-
     this.props.closeModal();
   }
 
@@ -102,7 +112,8 @@ const mstp = (state)=> {
 const mdtp = (dispatch) => {
 
   return {
-    createDeck: (deck) => dispatch(createDeck),
+    createDeck: (deck) => dispatch(createDeck(deck)),
+    copyCards: (cards) => dispatch(copyCards(cards))
   }
 }
 

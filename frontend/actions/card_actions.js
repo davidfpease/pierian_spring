@@ -68,6 +68,14 @@ export const updateCards = (cards) => {
   }
 };
 
+export const copyCards = (cards) => {
+  return dispatch => {
+    return CardUtil.copyCards(cards).then(cards => {
+      return dispatch(receiveCards(cards))
+    })
+  }
+};
+
 export const deleteCard = (cardId) => {
   return dispatch => {
     return CardUtil.deleteCard(cardId).then(()=>{
