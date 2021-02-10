@@ -25,6 +25,10 @@ class Api::CardsController < ApplicationController
     end
   end
 
+  def copy
+    debugger
+  end
+
   def update
     @card = Card.find_by(id: params[:id])
     # 

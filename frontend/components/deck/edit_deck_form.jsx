@@ -37,7 +37,7 @@ class EditDeckForm extends React.Component {
     // 
     return (
       <div className="edit-deck-form-container">
-        <div class="new-modal-title">Edit Deck</div>
+        <div className="new-modal-title">Edit Deck</div>
         <form onSubmit={this.handleSubmit}>
           <div onClick={()=>this.props.closeModal()} className="close-x">
             <img src={window.close_x} />

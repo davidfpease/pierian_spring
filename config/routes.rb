@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     end
     resources :cards, only: [:destroy, :update, :index]
     match 'bulk', to: 'cards#bulk', via: [:post]
+    match 'copy_cards', to: 'cards#copy', via: [:post]
 
   end
 

@@ -41,6 +41,15 @@ export const updateCards = (cards) => {
   })
 };
 
+export const copyCards = (cards) => {
+  // 
+  return $.ajax({
+    method: 'POST',
+    url: `/api/copy_cards`,
+    data: { cards },
+  })
+};
+
 export const deleteCard = (card_id) => {
 
   return $.ajax({

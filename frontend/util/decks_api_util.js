@@ -28,6 +28,20 @@ export const updateDeck = (deck) => {
   })
 }
 
+export const copyDeck = (deck, cards) => {
+  let newDeck = {title: deck.title,
+    objective: deck.objective,
+    mastery: 0 };
+  
+  // 
+  return $.ajax({
+    method: 'POST',
+    url: `/api/copy_deck`,
+    data: { deck: newDeck,
+            cards: cards },
+  })
+}
+
 export const deleteDeck = (deck_id) => {
 
   return $.ajax({

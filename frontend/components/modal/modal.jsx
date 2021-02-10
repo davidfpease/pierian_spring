@@ -7,6 +7,7 @@ import SignupFormContainer from '../session_form/signup_form_container';
 import CreateDeckFormContainer from '../deck/create_deck_form_container';
 import NoCardsModal from '../deck/no_cards_modal';
 import Checkpoint from '../study/checkpoint_modal';
+import OtherDeck from '../dashboard/other_deck';
 
 function Modal({ modal, closeModal, decks }) {
   
@@ -24,6 +25,17 @@ function Modal({ modal, closeModal, decks }) {
     case 'createDeck':
       component = <CreateDeckFormContainer />
       break;
+    case 'otherDeck':
+      
+      component = <OtherDeck closeModal={closeModal}   
+                            deck={modal.package.deck}/>
+      return (
+        <div className="other-deck-modal-background" onClick={closeModal}>
+          <div className="other-deck-modal-child" onClick={e => e.stopPropagation()}>
+            {component}
+          </div>
+        </div>
+      );
     case 'checkpoint':
       return(
         <div className="modal-background">
@@ -37,6 +49,7 @@ function Modal({ modal, closeModal, decks }) {
     default:
       return null;
   }
+
   return (
     <div className="modal-background" onClick={closeModal}>
       <div className="modal-child" onClick={e => e.stopPropagation()}>

@@ -29,7 +29,12 @@ class DeckItem extends React.Component {
   showDeckMenu(e) {
     e.preventDefault();
     e.stopPropagation();
-    // 
+    // debugger;
+    // only stop propagation of the click came from 
+    
+
+
+
     if (!this.state.showDeckMenu) {
       // 
       this.setState({ showDeckMenu: true }, () => {
@@ -38,16 +43,28 @@ class DeckItem extends React.Component {
       );
     } else {
       // 
-      this.closeDeckMenu();
+      this.closeDeckMenu(e);
     }
   }
 
-  closeDeckMenu() {
-    // 
+  closeDeckMenu(e) {
+    
+    // let parentElement = e.target;
+    // while (parentElement.classList.value !== "action-buttons deck-action-button"){
+    //   parentElement = parentElement.parentElement;
+    // }
+    
+
     this.setState({ showDeckMenu: false }, () => {
       document.removeEventListener('click', this.closeDeckMenu);
-    }
-    );
+    });
+
+
+    // if (e.currentTarget.id === this.props.deck.id.toString()){
+    //   this.setState({ showDeckMenu: false }, () => {
+    //     document.removeEventListener('click', this.closeDeckMenu);
+    //   });
+    // }
   }
 
   // { deck, editDeck, deleteDeck, openModal } = this.props;
@@ -110,7 +127,7 @@ class DeckItem extends React.Component {
                   <button className="pill-button add-cards">Add Cards</button>
                 </Link>
               )}
-              <div className="action-buttons deck-action-button" onClick={this.showDeckMenu}>
+              <div className="action-buttons deck-action-button" id={this.props.deck.id} onClick={this.showDeckMenu}>
                 <div className="options-button">
                   <IoIosMore />
                 </div>

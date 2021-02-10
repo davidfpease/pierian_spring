@@ -7,9 +7,10 @@ import {fetchAllDecks,
 import { fetchAllCards } from '../../actions/card_actions';
 import { logout } from '../../actions/session_actions';
 
-const mstp = (state, ownProps) => {
+const mstp = (state) => {
   return {
-    decks: state.entities.decks
+    decks: state.entities.decks,
+    currentUser: state.entities.users[state.session.id],
   }
 }
 
