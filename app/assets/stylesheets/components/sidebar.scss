@@ -236,3 +236,82 @@ li.confidence-ratings-bar {
 .options-button-deck-info {
     color: hsla(0,0%,100%,.7);
 }
+
+button.pill-button.add-deck {
+    width: fit-content;
+    height: fit-content;
+    border-radius: 25px;
+    font-size: 20px;
+    color: white;
+    font-weight: 900;
+}
+
+table.other-decks-table {
+    width: 100%;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.other-decks-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 70vh;
+    overflow: scroll;
+    background-color: rgba(255, 255, 255, 0.18);
+    margin-top: 40px;
+    border-radius: 10px;
+    border: 1px solid gray;
+    flex-direction: column;
+}
+
+.other-decks-title {
+    color: white;
+    font-size: 18px;
+}
+
+.add-deck-table-row:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+td.other-decks-table-title {
+    padding-left: 20px;
+}
+
+tr.add-deck-table-row {
+    height: 40px;
+    font-size: 16px;
+}
+
+.other-deck-search-input {
+    background-color: white;
+    width: 180px;
+    height: 20px;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.other-decks-search-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px 0px 25px 0px;
+}
+
+th.title {
+    text-align: left;
+    padding-left: 21px;
+}
+
+th.size {
+  text-align: left;
+}
+
+tr.table-row-add-decks {
+    font-size: 18px;
+    border-bottom: 1px solid gray;
+}
+
+.other-decks-search {
+    margin-top: 10px;
+}

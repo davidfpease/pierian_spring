@@ -16,9 +16,11 @@ export const createDeck = (deck) => {
 }
 
 export const updateDeck = (deck) => {
+  debugger;
   let newDeck = {title: deck.title,
     objective: deck.objective,
-    mastery: deck.mastery };
+    mastery: deck.mastery,
+    creator_id: deck.creator_id };
     
   // 
   return $.ajax({

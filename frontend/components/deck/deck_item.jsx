@@ -29,7 +29,7 @@ class DeckItem extends React.Component {
   showDeckMenu(e) {
     e.preventDefault();
     e.stopPropagation();
-    // debugger;
+    // 
     // only stop propagation of the click came from 
     
 
@@ -79,6 +79,9 @@ class DeckItem extends React.Component {
       }
     })
 
+    let cardWord = "cards";
+    numCards === 1 ? cardWord = "card" : null;
+
 
     //
     return (
@@ -100,7 +103,7 @@ class DeckItem extends React.Component {
                 <div className="deck-name-caption">
                   <Link to={`/study/${deck.id}`}>
                     <h4 className="deck-name">{deck.title}</h4>
-                    <p className="deck-caption"> {numCards} cards in this deck</p>
+                    <p className="deck-caption"> {numCards} {cardWord} in this deck</p>
                   </Link>
                 </div>
               ):(

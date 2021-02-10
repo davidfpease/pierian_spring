@@ -44,9 +44,9 @@ export const createDeck = (deck) => {
 
 export const updateDeck = (deck) => {
   return dispatch => {
-    
+    debugger;
     return DeckUtil.updateDeck(deck).then(deck=>{
-      
+      debugger;
       return dispatch(receiveDeck(deck))
     })
   }

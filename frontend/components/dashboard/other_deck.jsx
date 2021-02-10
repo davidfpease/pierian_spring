@@ -36,7 +36,7 @@ class OtherDeck extends Component {
         card.score = 0;
       });
       this.props.copyCards(newCards).then(resp => {
-        debugger;
+        
       });
       
     })

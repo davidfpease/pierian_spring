@@ -6,7 +6,8 @@ class EditDeckForm extends React.Component {
     this.state = {
       title: props.deck.title,
       objective: props.deck.objective,
-      id: props.deck.id
+      id: props.deck.id,
+      creator_id: props.deck.creator_id,
     }
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -18,9 +19,7 @@ class EditDeckForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    //  
 
-    //extra attribute of id: is making it to the database under 'deck'
     const newDeck = this.state;
     this.props.updateDeck(newDeck);
     this.props.closeModal();

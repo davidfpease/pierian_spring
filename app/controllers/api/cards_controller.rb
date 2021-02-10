@@ -39,9 +39,9 @@ class Api::CardsController < ApplicationController
 
     render :index
 
-    
+
     # if Card.create!(@cards)
-    #   debugger
+    #   
     #   render :index
     # else
     #   render json: @cards.errors.full_messages

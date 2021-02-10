@@ -288,6 +288,10 @@ li svg {
   z-index: 4;
 }
 
+.action-buttons.deck-action-button:hover {
+  cursor: pointer;
+}
+
 .action-buttons {
   display: flex;
   justify-content: flex-end;

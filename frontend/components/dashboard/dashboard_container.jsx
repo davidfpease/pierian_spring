@@ -10,6 +10,7 @@ import { logout } from '../../actions/session_actions';
 const mstp = (state) => {
   return {
     decks: state.entities.decks,
+    cards: state.entities.cards,
     currentUser: state.entities.users[state.session.id],
   }
 }

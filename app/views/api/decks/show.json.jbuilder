@@ -1,1 +1,1 @@
-json.extract! @deck, :id, :title, :objective, :mastery
+json.extract! @deck, :id, :title, :objective, :mastery, :creator_id
