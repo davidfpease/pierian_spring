@@ -54,14 +54,19 @@ class OtherDeck extends Component {
 
     return (
       <div className="other-deck-outer">
-        <div className="edit-deck-form-cont container">
-          <h2 className="edit-form-header">Flashcards in "{deck.title}"</h2>
+        <div className="other-deck-form-container">
+          <div className="other-deck-top">
+            <h2 className="edit-form-header">Flashcards in "{deck.title}"</h2>
+            <div onClick={() => this.props.closeModal()} className="close-x other-deck">
+              <img src={window.close_x} />
+            </div> 
+          </div>
           <form className="edit-deck-form" onSubmit={()=>this.handleSubmit(cards)}>
             <table className="edit-deck-table">
               <thead>
                 <tr className="table-row">
-                  <th className='number-sign'>#</th>
-                  <th>Question</th>
+                  <th className='other-deck-number-sign'>#</th>
+                  <th className="question-column">Question</th>
                   <th></th>
                   <th>Answer</th>
                   <th> </th>
@@ -71,17 +76,17 @@ class OtherDeck extends Component {
                 {
                   cards.map((card, index) => (
                     <tr key={index}>
-                      <td className="table-row-number">
+                      <td className="table-row-number other-deck">
                         <div>
                           {index + 1}
                         </div>
                       </td>
-                      <td className='table-td'>
+                      <td className='other-deck-table-td'>
                         <div className="other-deck-question">{card.question}</div>
 
                       </td>
                       <td className="filler-cell"></td>
-                      <td className='table-td'>
+                      <td className='other-deck-table-td'>
                         <div className="other-deck-answer"> {card.answer}</div>
                       </td>
                     </tr>
@@ -89,8 +94,8 @@ class OtherDeck extends Component {
                 }
               </tbody>
             </table>
-            <div className="edit-deck-form-footer">
-              <div className="edit-deck-form-actions">
+            <div className="other-deck-form-footer">
+              <div className="other-deck edit-deck-form-actions">
                 <button className='save-button' type='submit'>Add this Deck</button>
               </div>
             </div>
