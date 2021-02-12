@@ -50,7 +50,7 @@ class DeckInfo extends React.Component {
         </div>
         <div className="study-mix-info">
             <div className="study-mix-icon">
-              <img id="deck-image-small" src="http://localhost:3000/assets/ugs-be871e79593d46b7a66d2f4b99248d6cf90cfbc8be8559b121f1d14e81de926d.png"></img>
+            <img id="deck-image-small" src={window.ugs}></img>
               <h3 className="study-mix-name">{deck.title}</h3>
             </div>
           </div>
