@@ -13,7 +13,14 @@ export default function about(props) {
          frontend. 
       </div>
       <div className="created-by">
-        <h3>Created by: &nbsp;</h3><a target="_blank" className="link" href="http://davidpease.me" target="_blank">David Pease</a>
+        <div className="created-by-sub">
+          <h3>Created by: &nbsp;</h3><a target="_blank" className="link" href="http://davidpease.me" target="_blank">David Pease</a>
+        </div>
+        <div>
+          <h3>
+            <a target="_blank" className="link" href="https://github.com/davidfpease/pierian_spring" target="_blank">Github Repo</a>
+          </h3>
+        </div>
       </div>
       
     </div>

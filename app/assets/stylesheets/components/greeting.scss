@@ -141,7 +141,13 @@
 
 .created-by {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    flex-direction: column; 
+}
+
+.created-by-sub {
+  display: flex;  
+  align-items: center;
 }
 
 .close-x.about {

@@ -107,8 +107,12 @@ lass EditCardsForm extends React.Component {
   // render(){...
 
 ```
-
+### Edit Deck Workflow
 <img src="https://media.giphy.com/media/AsUfHkl1cdOWEo0K2h/giphy.gif" width="500">
+
+### Study Deck Workflow and Mastery Calculation
+<img src="https://media.giphy.com/media/qibQ0XeaKBS1DZA0h1/giphy.gif" width="500">
+
 
 
 ### Work Remaining
