@@ -148,9 +148,9 @@ class EditCardsForm extends React.Component {
             </li>
           </ul>
           <ul className="nav-ctas">
-            <li className="nav-bar-item">
-              <div className="nav-cta">
-                <button className="nav-bar-button" onClick={()=>this.props.logout()}>Log Out</button>
+            <li className="login-button">
+              <div onClick={() => this.props.logout()} className="nav-cta">
+                <button className="nav-bar-button" >Log Out</button>
               </div>
             </li>
             <li className="nav-bar-item">

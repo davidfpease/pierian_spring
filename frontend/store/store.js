@@ -7,7 +7,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 const configureStore = (preloadedState = {}) => {
   //return createStore(rootReducer, preloadedState, applyMiddleware(thunk, logger));
   return createStore(rootReducer, preloadedState, 
-    composeWithDevTools(applyMiddleware(thunk, logger))
+    composeWithDevTools(applyMiddleware(thunk))
     );
 };
 

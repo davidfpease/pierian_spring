@@ -15,6 +15,7 @@ class DeckItem extends React.Component {
     this.closeModal = this.closeModal.bind(this);
     this.showDeckMenu = this.showDeckMenu.bind(this);
     this.closeDeckMenu = this.closeDeckMenu.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   displayModal(e){
@@ -26,14 +27,17 @@ class DeckItem extends React.Component {
     this.setState({displayModal: false});
   }
 
+  handleClick(deck){
+    //open the preview modal- for now, use the 'OtherDeck' modal
+    this.props.openModal({
+      modal: "preview",
+      package: { deck: this.props.deck }
+    });
+  }
+
   showDeckMenu(e) {
     e.preventDefault();
     e.stopPropagation();
-    // 
-    // only stop propagation of the click came from 
-    
-
-
 
     if (!this.state.showDeckMenu) {
       // 
@@ -48,23 +52,9 @@ class DeckItem extends React.Component {
   }
 
   closeDeckMenu(e) {
-    
-    // let parentElement = e.target;
-    // while (parentElement.classList.value !== "action-buttons deck-action-button"){
-    //   parentElement = parentElement.parentElement;
-    // }
-    
-
     this.setState({ showDeckMenu: false }, () => {
       document.removeEventListener('click', this.closeDeckMenu);
     });
-
-
-    // if (e.currentTarget.id === this.props.deck.id.toString()){
-    //   this.setState({ showDeckMenu: false }, () => {
-    //     document.removeEventListener('click', this.closeDeckMenu);
-    //   });
-    // }
   }
 
   // { deck, editDeck, deleteDeck, openModal } = this.props;
@@ -116,7 +106,7 @@ class DeckItem extends React.Component {
             <li className="action-buttons">
               {numCards > 0 ? (
                 <div>
-                  <div className="browse-button deck-action-button">
+                  <div onClick={this.handleClick} className="browse-button deck-action-button">
                     <IoIosGlasses />
                   </div>
                   <Link to={`/decks/${deck.id}/cards`}>
@@ -143,12 +133,12 @@ class DeckItem extends React.Component {
                     <li className="dropdow-option"
                         onClick={(e)=>{ this.displayModal(e);
                         this.closeDeckMenu()}}>
-                          <div><IoMdCreate /></div>
+                          <div className="drop-down-icon"><IoMdCreate /></div>
                           <div className="drop-down-text">Edit Deck</div>
                     </li>
                     <li className="dropdown-option"
                         onClick={() => this.props.deleteDeck(deck.id)}>
-                          <div><IoMdClose /></div>
+                          <div className="drop-down-icon"><IoMdClose /></div>
                           <div className="drop-down-text">Delete Deck</div>
                     </li>
 

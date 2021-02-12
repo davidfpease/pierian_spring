@@ -18,8 +18,7 @@ import NoMatch from '../util/no_match.jsx';
 
 const App = () => (
   <div>
-    <Modal />
-    
+    <Modal />    
     <Switch>
       <AuthRoute exact path="/" component={ GreetingContainer }/>
       <AuthRoute exact path="/login" component={ GreetingContainer }/>

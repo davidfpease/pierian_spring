@@ -60,7 +60,7 @@ a {
   border: 1px solid rgba(0,0,0,.15);
   border-radius: 4px;
   min-width: 160px;
-  padding: 3px 11px;
+  padding: 3px 0px 3px 0px;
   position: absolute;
   top: 37px;
   left: 136px;
@@ -73,6 +73,10 @@ a {
     display: flex;
     align-items: center;
     //padding: 2px;
+}
+
+.options-menu li svg {
+    margin-left: 4px;
 }
 
 .options-menu li:hover {
@@ -169,6 +173,7 @@ li svg {
   color: #28a5dc;
   background-color: rgba(0,0,0,.1);
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .deck-creator-name a{
@@ -325,7 +330,7 @@ li.deck-selection-check-box, li.deck-mastery, .check-box, .deck-mastery {
   border: 1px solid rgba(0,0,0,.15);
   border-radius: 4px;
   min-width: 160px;
-  padding: 3px 11px;
+  padding: 3px 0px 3px 0px;
   position: absolute;
   top: 25px;
   left: -136px;
@@ -436,4 +441,8 @@ li.li-spacer {
 
 .pill-button-add-cards {
   margin-right: 10px;
+}
+
+.drop-down-icon {
+    margin-left: 4px;
 }

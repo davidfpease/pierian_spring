@@ -5,9 +5,9 @@ import { connect } from 'react-redux';
 import LoginFormContainer from '../session_form/login_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
 import CreateDeckFormContainer from '../deck/create_deck_form_container';
-import NoCardsModal from '../deck/no_cards_modal';
 import Checkpoint from '../study/checkpoint_modal';
 import OtherDeck from '../dashboard/other_deck';
+import About from '../greeting/about';
 
 function Modal({ modal, closeModal, decks }) {
   
@@ -25,10 +25,26 @@ function Modal({ modal, closeModal, decks }) {
     case 'createDeck':
       component = <CreateDeckFormContainer />
       break;
+    case 'about':
+      component = <About closeModal={closeModal}/>
+      break;
     case 'otherDeck':
       
       component = <OtherDeck closeModal={closeModal}   
-                            deck={modal.package.deck}/>
+                            deck={modal.package.deck}
+                            showAddButton={true}/>
+      return (
+        <div className="other-deck-modal-background" onClick={closeModal}>
+          <div className="other-deck-modal-child" onClick={e => e.stopPropagation()}>
+            {component}
+          </div>
+        </div>
+      );
+    case 'preview':
+      debugger;
+      component = <OtherDeck closeModal={closeModal}   
+                            deck={modal.package.deck}
+                            showAddButton={false}/>
       return (
         <div className="other-deck-modal-background" onClick={closeModal}>
           <div className="other-deck-modal-child" onClick={e => e.stopPropagation()}>

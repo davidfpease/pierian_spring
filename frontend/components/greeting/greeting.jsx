@@ -35,16 +35,16 @@ const Greeting = (props) => {
             </li>
           </ul>
           <ul className="nav-ctas">
-            <li className="nav-bar-item">
-              <div className="nav-cta">
+            <li className="login-button">
+                <div onClick={() => props.openModal({ modal: 'login' })} className="nav-cta">
                 <button className="nav-bar-button" 
-                  onClick={() => props.openModal({modal: 'login'})}>Log In</button>
+                  >Log In</button>
               </div>
             </li>
-            <li className="nav-bar-item">
-              <div className="nav-cta nav-cta-login">
+            <li className="nav-bar-item sign-up">
+                <div onClick={() => props.openModal({ modal: 'signup' })} className="nav-cta nav-cta-login">
                 <button className="get-started-button" 
-                  onClick={() => props.openModal({modal: 'signup'})}>Get Started</button>
+                  >Get Started</button>
               </div>
             </li>
           </ul>
@@ -52,6 +52,9 @@ const Greeting = (props) => {
       </div>
       </div>
       <Banner openModal={props.openModal}/>
+      <div className="about-footer">
+        <h1 onClick={()=>props.openModal({modal: "about"})}>About this site</h1>
+      </div>
     </div>
   );
 
@@ -64,11 +67,6 @@ const Greeting = (props) => {
     </hgroup>
     );
   };
-
-  // return (
-  //   props.currentUser ? personalGreeting(props.currentUser, props.logout) : 
-  //   sessionLinks()
-  // );
 
   return (
     props.currentUser ? <Redirect to="/dashboard" /> :

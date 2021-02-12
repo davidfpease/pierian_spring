@@ -96,7 +96,11 @@ class OtherDeck extends Component {
             </table>
             <div className="other-deck-form-footer">
               <div className="other-deck edit-deck-form-actions">
-                <button className='save-button' type='submit'>Add this Deck</button>
+                {
+                  this.props.showAddButton ? (
+                    <button className='save-button' type='submit'>Add this Deck</button>
+                  ) : (null)
+                }
               </div>
             </div>
           </form>
