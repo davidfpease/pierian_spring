@@ -116,9 +116,9 @@ lass EditCardsForm extends React.Component {
 
 
 ### Work Remaining
-- Finalize the study feature by improving the UI and building the processes necessary to track a user's responses and frequency of exposure to each card
+- Improve the study feature by improving the UI and the algorithm necessary to track a user's mastery
 - Add "Classes" as an additional layer to organize decks
-- Search feature to find other available decks
+- Add Learners and Profile components
 - Edit each card individually
 - Overall styling and UI
 
