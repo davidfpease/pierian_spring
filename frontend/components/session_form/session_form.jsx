@@ -6,6 +6,7 @@ class SessionForm extends React.Component {
     this.state = {
       email: '',
       password: '',
+      confirm: '',
       first_name: '',
       last_name: '',
     };
@@ -33,13 +34,28 @@ class SessionForm extends React.Component {
   }
 
   renderErrors() {
+
+    let passwordError = null;
+
+    if((this.state.password !== this.state.confirm)
+      && this.props.formType === "signup"){
+        debugger;
+      if (this.state.password !== this.state.confirm){
+        passwordError = (
+          <li key="error#999">
+            Passwords do not match
+          </li>
+        )
+      }
+    }
     return (
-      <ul>
+      <ul className="errors">
         {this.props.errors.map((error, i) => (
           <li key={`error#${i}`}>
             {error}
           </li>
         ))}
+        {passwordError}
       </ul>
     );
   }
@@ -47,16 +63,47 @@ class SessionForm extends React.Component {
   render() {
 
     let buttonLabel;
+    let allow = true;
     if (this.props.formType === "signup"){
-      buttonLabel = "Get Started";
+      buttonLabel = "Register";
+      Object.keys(this.state).forEach(key=>{
+        if(this.state[key].trim().length === 0)
+          allow = false;
+      })
+      if (this.state.password !== this.state.confirm){
+        allow = false;
+      }
+
     } else {
       buttonLabel = "Log In";
+      if (this.state.email.trim().length === 0 || this.state.password.trim().length === 0){
+        allow = false;
+      }
     }
+
+    let className;
+
+    this.props.formType === 'signup' ? className="signup-form-container" :
+      className = "login-form-container";
 
 
 
     return (
-      <div className="login-form-container">
+      <div className={className}>
+        {this.props.formType === 'signup' ? (
+          <div className="marketing-left">
+            <div className="marketing-section anything">
+              <div className="section-title">Start Learning Faster:</div>
+                <ul className="marketing-items">
+                  <li>Learn anything in half the time, using cognitive science</li>
+                  <li>Add your own digital flashcards</li>
+                  <li>Find millions of other public cards</li>
+                  <li>Sync with mobile app</li>
+                </ul>
+            </div>
+          </div>
+        ) : (null)
+        }
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <div className="modal-title">
             <span>{buttonLabel}</span>            
@@ -104,15 +151,33 @@ class SessionForm extends React.Component {
               />
             </label>
             <br />
-            <div className="pill-button-container">
-              <input className="session-submit pill-button" type="submit" value={buttonLabel} />
-            </div>
-          </div>
-          <div className="error-messages">
-            {this.renderErrors()}
+            {this.props.formType === 'signup' ? (
+                <label className="input-descriptor">Confirm Password
+                  <input type="password"
+                    value={this.state.confirm}
+                    onChange={this.update('confirm')}
+                    className="login-input"
+                  />
+                </label>
+              ) : (null)
+            }
+            {
+              allow ? (
+                <div className="pill-button-container">
+                  <input className="session-submit pill-button" type="submit" value={buttonLabel} />
+                </div>
+              ) : (
+                <div className="pill-button-container not-allowed">
+                    <div className="session-submit pill-button not-allowed">{buttonLabel}</div>
+                </div>
+              )
+            }
           </div>
           <div className="demo-button-container">
             <button className="demo-button" onClick={this.demoUser}>Demo User</button>
+          </div>
+          <div className="error-messages">
+            {this.renderErrors()}
           </div>
         </form>
       </div>

@@ -173,3 +173,16 @@
   text-decoration: underline;
 }
 
+.errors {
+    color: red;
+    font-style: italic;
+    margin: 10px;
+}
+
+.session-submit.pill-button.not-allowed {
+    background-color: #8080807a;
+}
+
+.session-submit.pill-button.not-allowed:hover {
+    cursor: not-allowed;
+}
